@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/background.png" type="Texture" id=1]
+[ext_resource path="res://assets/UI/start-game.svg" type="Texture" id=2]
+[ext_resource path="res://assets/ttf/SpaceCapitan-Regular.otf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 56
+font_data = ExtResource( 3 )
+
+[node name="Start-screen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.0
+margin_top = 5.0
+margin_right = 1.0
+margin_bottom = 5.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_left = 0.375884
+anchor_top = 0.169182
+anchor_right = 0.375884
+anchor_bottom = 0.169182
+margin_left = -391.906
+margin_top = -102.509
+margin_right = 643.094
+margin_bottom = 494.491
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 1
+
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_left = 437.0
+margin_top = 251.0
+margin_right = 593.0
+margin_bottom = 415.0
+texture_normal = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 365.0
+margin_top = 79.0
+margin_right = 682.0
+margin_bottom = 218.0
+custom_fonts/font = SubResource( 1 )
+text = "SPACE 
+TRAVELERS"
+align = 1
