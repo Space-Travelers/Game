@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/UI/elements/rectangle-dropZone.png" type="Texture" id=1]
+[ext_resource path="res://src/scenes/shared/dropzone/dropzone.gd" type="Script" id=2]
+
+[node name="Node2D" type="Position2D" groups=["zone"]]
+script = ExtResource( 2 )
+
+[node name="Rectangle-dropZone" type="Sprite" parent="."]
+position = Vector2( -2.38419e-07, -1 )
+scale = Vector2( 0.794459, 0.794459 )
+texture = ExtResource( 1 )
+
+[connection signal="ready" from="." to="." method="_on_Node2D_ready"]
