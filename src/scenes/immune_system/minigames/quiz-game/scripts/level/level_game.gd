@@ -14,9 +14,6 @@ var correct := 0
 var timer := 10
 
 onready var question_texts := $question_info/txt_question
-onready var question_image := $question_info/image_holder/question_Image
-onready var question_video := $question_info/image_holder/question_video
-onready var question_audio := $question_info/image_holder/question_audio
 
 func _ready() -> void:
 	for _button in $question_holder.get_children():

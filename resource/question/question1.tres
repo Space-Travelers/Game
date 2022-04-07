@@ -1,10 +1,10 @@
 [gd_resource type="Resource" load_steps=2 format=2]
 
-[ext_resource path="res://scripts/resource/res_question.gd" type="Script" id=1]
+[ext_resource path="res://src/scenes/immune_system/minigames/quiz-game/scripts/resource/res_question.gd" type="Script" id=1]
 
 [resource]
 script = ExtResource( 1 )
 question_info = "Se considera como uno de los autores de la teoría celular:"
-type = 3
+type = 0
 options = [ "Janssen", "Hooke", "Hooke", "Virchow" ]
 correct = "Virchow"
