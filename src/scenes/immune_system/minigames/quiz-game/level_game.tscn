@@ -1,0 +1,136 @@
+[gd_scene format=2]
+
+[node name="level_game" type="Control"]
+anchor_left = 0.363
+anchor_right = 1.35
+anchor_bottom = 0.931
+margin_left = -453.64
+margin_top = -16.0
+margin_right = -451.0
+margin_bottom = 37.68
+
+[node name="question_info" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -404.5
+margin_top = 83.0
+margin_right = 409.5
+margin_bottom = 279.0
+alignment = 1
+
+[node name="txt_question" type="Label" parent="question_info"]
+margin_top = 63.0
+margin_right = 814.0
+margin_bottom = 133.0
+rect_min_size = Vector2( 0, 70 )
+size_flags_vertical = 6
+autowrap = true
+
+[node name="question_holder" type="VBoxContainer" parent="."]
+anchor_left = 0.359
+anchor_top = 0.713
+anchor_right = 0.359
+anchor_bottom = 0.713
+margin_left = -278.494
+margin_top = -166.212
+margin_right = 103.506
+margin_bottom = 101.788
+rect_clip_content = true
+custom_constants/separation = 20
+alignment = 1
+
+[node name="button_option_1" type="Button" parent="question_holder"]
+margin_right = 382.0
+margin_bottom = 124.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+expand_icon = true
+
+[node name="button_option_2" type="Button" parent="question_holder"]
+margin_top = 144.0
+margin_right = 382.0
+margin_bottom = 268.0
+size_flags_vertical = 3
+
+[node name="question_holder2" type="VBoxContainer" parent="."]
+anchor_left = 0.359
+anchor_top = 0.713
+anchor_right = 0.359
+anchor_bottom = 0.713
+margin_left = 245.506
+margin_top = -166.212
+margin_right = 647.506
+margin_bottom = 102.788
+rect_clip_content = true
+custom_constants/separation = 20
+alignment = 1
+
+[node name="button_option_3" type="Button" parent="question_holder2"]
+margin_right = 402.0
+margin_bottom = 124.0
+size_flags_vertical = 3
+
+[node name="button_option_4" type="Button" parent="question_holder2"]
+margin_top = 144.0
+margin_right = 402.0
+margin_bottom = 269.0
+size_flags_vertical = 3
+
+[node name="game_over" type="Panel" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="txt_info" type="Label" parent="game_over"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -245.0
+margin_top = 88.0014
+margin_right = 245.0
+margin_bottom = 237.001
+text = "Número de aciertos"
+align = 1
+valign = 1
+
+[node name="txt_result" type="Label" parent="game_over"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -149.5
+margin_top = -74.5
+margin_right = 149.5
+margin_bottom = 74.5
+text = "0/0"
+align = 1
+valign = 1
+
+[node name="button_restart" type="Button" parent="game_over"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -266.5
+margin_top = -254.435
+margin_right = 266.5
+margin_bottom = -128.435
+text = "Jugar otra vez"
+
+[node name="audio_correct" type="AudioStreamPlayer" parent="."]
+
+[node name="audio_incorrect" type="AudioStreamPlayer" parent="."]
+
+[node name="timer" type="Timer" parent="."]
+autostart = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground"]
+margin_left = 12.0
+margin_top = -10.0
+margin_right = 1029.0
+margin_bottom = 594.0
+expand = true
+
+[connection signal="pressed" from="game_over/button_restart" to="." method="_on_button_restart_pressed"]
+[connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]
