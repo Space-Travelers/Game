@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://src/scenes/immune_system/minigames/quiz-game/scripts/resource/res_question.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+question_info = "La circulación intracelular se realiza a través de:"
+type = 0
+options = [ "El retículo endoplasmático", "Los ribosomas", "Los centrosomas", "Los dictiosomas" ]
+correct = "Todos"
