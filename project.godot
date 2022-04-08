@@ -27,7 +27,6 @@ _global_script_class_icons={
 [application]
 
 config/name="Comunitarias"
-run/main_scene="res://src/scenes/immune_system/minigames/quiz-game/level_game.tscn"
 run/low_processor_mode=true
 config/icon="res://icon.png"
 
