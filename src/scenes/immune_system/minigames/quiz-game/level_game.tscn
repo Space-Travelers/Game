@@ -132,9 +132,6 @@ stream = ExtResource( 2 )
 [node name="audio_incorrect" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
 
-[node name="timer" type="Timer" parent="."]
-autostart = true
-
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="TextureRect" type="TextureRect" parent="ParallaxBackground"]
@@ -146,4 +143,3 @@ texture = ExtResource( 1 )
 expand = true
 
 [connection signal="pressed" from="game_over/button_restart" to="." method="_on_button_restart_pressed"]
-[connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]
