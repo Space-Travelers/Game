@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/UI/backgrounds/background_alpha_soup.png" type="Texture" id=1]
 [ext_resource path="res://src/scenes/shared/draggable/draggable.tscn" type="PackedScene" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://assets/UI/elements/definition-container.svg" type="Texture" id=4]
 [ext_resource path="res://font.tres" type="DynamicFont" id=5]
 [ext_resource path="res://assets/ttf/CANDARA.TTF" type="DynamicFontData" id=6]
+[ext_resource path="res://src/scenes/immune_system/minigames/definitions/Main.gd" type="Script" id=7]
+[ext_resource path="res://src/scenes/immune_system/minigames/definitions/Definition-container.gd" type="Script" id=8]
 
 [sub_resource type="DynamicFont" id=4]
 size = 25
@@ -19,6 +21,7 @@ font_data = ExtResource( 6 )
 default_font = SubResource( 4 )
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource( 7 )
 
 [node name="BackgroundAlphaSoup" type="Sprite" parent="."]
 position = Vector2( 514, 299.25 )
@@ -55,12 +58,31 @@ custom_fonts/font = ExtResource( 5 )
 text = "Une las partes con sus  definiciones para matar al virus"
 autowrap = true
 
-[node name="Definition-container4" type="Sprite" parent="."]
+[node name="Node2D" parent="." groups=["word"] instance=ExtResource( 2 )]
+position = Vector2( 219, 205 )
+word = "Citoplasma"
+
+[node name="Node2D2" parent="." groups=["word"] instance=ExtResource( 2 )]
+position = Vector2( 221, 301 )
+index = 1
+word = "Membrana Plasmatica"
+
+[node name="Node2D3" parent="." groups=["word"] instance=ExtResource( 2 )]
+position = Vector2( 222, 400 )
+index = 2
+word = "Cloroplasto"
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="Node" type="Node" parent="." groups=["answer"]]
+
+[node name="Definition-container" type="Sprite" parent="Node"]
 position = Vector2( 791, 405.491 )
 scale = Vector2( 0.636136, 0.600131 )
 texture = ExtResource( 4 )
+script = ExtResource( 8 )
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Definition-container4"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Node/Definition-container"]
 anchor_left = 0.5
 anchor_top = 0.459
 anchor_right = 0.5
@@ -72,12 +94,18 @@ margin_bottom = -16.0279
 theme = SubResource( 3 )
 text = "Se encuentran únicamente en las células vegetales. Están limitados por una doble membrana"
 
-[node name="Definition-container5" type="Sprite" parent="."]
+[node name="endPoint" parent="Node" instance=ExtResource( 3 )]
+position = Vector2( 549, 403 )
+
+[node name="Node2" type="Node" parent="." groups=["answer"]]
+
+[node name="Definition-container" type="Sprite" parent="Node2"]
 position = Vector2( 789, 168 )
 scale = Vector2( 0.636136, 0.600131 )
 texture = ExtResource( 4 )
+script = ExtResource( 8 )
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Definition-container5"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Node2/Definition-container"]
 anchor_left = 0.5
 anchor_top = 0.459
 anchor_right = 0.5
@@ -89,12 +117,18 @@ margin_bottom = -16.0279
 theme = SubResource( 3 )
 text = "Es la sustancia que ocupa el interior de la célula. Contiene diversas sustancias de reserva en disolución"
 
-[node name="Definition-container6" type="Sprite" parent="."]
+[node name="endPoint" parent="Node2" instance=ExtResource( 3 )]
+position = Vector2( 546, 171 )
+
+[node name="Node3" type="Node" parent="." groups=["answer"]]
+
+[node name="Definition-container" type="Sprite" parent="Node3"]
 position = Vector2( 790, 286 )
 scale = Vector2( 0.636136, 0.600131 )
 texture = ExtResource( 4 )
+script = ExtResource( 8 )
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Definition-container6"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Node3/Definition-container"]
 anchor_left = 0.5
 anchor_top = 0.459
 anchor_right = 0.5
@@ -107,25 +141,5 @@ theme = SubResource( 3 )
 text = "Es fundamental, por que aloja
 sustancias que hacen posible el desarrollo de varias actividades"
 
-[node name="Node2D" parent="." instance=ExtResource( 2 )]
-position = Vector2( 219, 205 )
-word = "Citoplasma"
-
-[node name="Node2D2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 221, 301 )
-index = 1
-word = "Membrana Plasmatica"
-
-[node name="Node2D3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 222, 400 )
-index = 2
-word = "Cloroplasto"
-
-[node name="endPoint1" parent="." instance=ExtResource( 3 )]
-position = Vector2( 546, 171 )
-
-[node name="endPoint2" parent="." instance=ExtResource( 3 )]
+[node name="endPoint" parent="Node3" instance=ExtResource( 3 )]
 position = Vector2( 546, 286 )
-
-[node name="endPoint3" parent="." instance=ExtResource( 3 )]
-position = Vector2( 549, 403 )

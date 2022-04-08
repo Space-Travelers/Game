@@ -3,9 +3,12 @@ extends Node2D
 var selected = false
 var rest_point
 var rest_nodes = []
-var nodes_availables;
+signal send_word
+
 export var index : int
 export var word : String
+export var id_definition : int
+
 
 
 # Called when the node enters the scene tree for the first time.
@@ -13,19 +16,16 @@ func _ready():
 	rest_nodes = get_tree().get_nodes_in_group("zone")
 	rest_point = rest_nodes[index].global_position
 	rest_nodes[index].select()
+	
+	
+
+func set_word(definiton_word:String):
+	word = definiton_word
 	var label = get_node("Label")
 	label.text = word
-	nodes_availables = getEndPointsTotal()	
-	
 			
 
-func getEndPointsTotal():
-	var total = 0
-	for node in rest_nodes:
-		if (!node.startPoint):
-			total= total+1
-	return total
-	
+
 
 func _on_Area2D_input_event(viewport, event, shape_idx):
 	if Input.is_action_just_pressed( "click"):
@@ -46,15 +46,11 @@ func _input(event):
 				var distance = global_position.distance_to(child.global_position)
 				if distance < shortest_dist:
 					if (!child.selected):
+						child.set_id(id_definition)						
 						child.select()
 						rest_point = child.global_position
 						shortest_dist = distance
-						nodes_availables = nodes_availables - 1
-						print(nodes_availables)
-						
-			
-			if(nodes_availables==0):
-				print("End of game")
 	
 						
+
 
