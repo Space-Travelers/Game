@@ -1,0 +1,143 @@
+[gd_resource type="Theme" load_steps=18 format=2]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://assets/ttf/SpaceCapitan-Regular.otf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 17
+extra_spacing_top = 4
+extra_spacing_bottom = 4
+font_data = SubResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.117647, 0.631373, 0.560784, 0.337255 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.14902, 0.772549, 0.686275, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.117647, 0.631373, 0.560784, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=18]
+bg_color = Color( 0.521569, 0.882353, 0.807843, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.117647, 0.631373, 0.560784, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="DynamicFontData" id=8]
+font_path = "res://assets/ttf/SpaceCapitan-Regular.otf"
+
+[sub_resource type="DynamicFont" id=9]
+size = 23
+outline_color = Color( 0.156863, 0.572549, 0.52549, 1 )
+font_data = SubResource( 8 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.184314, 0.482353, 0.454902, 0.211765 )
+border_width_left = 4
+border_width_right = 4
+border_color = Color( 0.588235, 0.988235, 0.839216, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 9
+expand_margin_left = 8.0
+expand_margin_top = 8.0
+expand_margin_bottom = 8.0
+
+[sub_resource type="DynamicFontData" id=11]
+font_path = "res://assets/ttf/SpaceGrotesk-SemiBold.ttf"
+
+[sub_resource type="DynamicFont" id=12]
+outline_color = Color( 0.12549, 0.384314, 0.368627, 1 )
+use_mipmaps = true
+font_data = SubResource( 11 )
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0.184314, 0.184314, 0.184314, 1 )
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id=14]
+bg_color = Color( 0.588235, 0.988235, 0.839216, 1 )
+border_width_left = 1
+border_color = Color( 0.588235, 0.988235, 0.839216, 1 )
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="DynamicFontData" id=15]
+font_path = "res://assets/ttf/SpaceGrotesk-VariableFont_wght.ttf"
+
+[sub_resource type="DynamicFont" id=16]
+size = 14
+extra_spacing_top = 5
+font_data = SubResource( 15 )
+
+[sub_resource type="StyleBoxFlat" id=17]
+bg_color = Color( 0.184314, 0.482353, 0.454902, 0.211765 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0.588235, 0.988235, 0.839216, 1 )
+corner_radius_top_left = 13
+corner_radius_top_right = 1
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 1
+expand_margin_left = 2.0
+
+[resource]
+Button/colors/font_color = Color( 0.12549, 0.231373, 0.211765, 1 )
+Button/colors/font_color_disabled = Color( 0, 0, 0, 0.533333 )
+Button/colors/font_color_focus = Color( 0.886275, 0.992157, 0.976471, 1 )
+Button/colors/font_color_hover = Color( 0.886275, 0.992157, 0.976471, 1 )
+Button/colors/font_color_pressed = Color( 0.886275, 0.992157, 0.976471, 1 )
+Button/constants/hseparation = 2
+Button/fonts/font = SubResource( 2 )
+Button/styles/disabled = SubResource( 3 )
+Button/styles/focus = SubResource( 4 )
+Button/styles/hover = SubResource( 5 )
+Button/styles/normal = SubResource( 18 )
+Button/styles/pressed = SubResource( 7 )
+Label/colors/font_color = Color( 0.486275, 0.988235, 0.827451, 1 )
+Label/colors/font_color_shadow = Color( 0, 0, 0, 0 )
+Label/colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+Label/constants/line_spacing = 3
+Label/constants/shadow_as_outline = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/fonts/font = SubResource( 9 )
+LineEdit/styles/focus = null
+LineEdit/styles/normal = SubResource( 10 )
+ProgressBar/colors/font_color = Color( 0.12549, 0.384314, 0.368627, 1 )
+ProgressBar/colors/font_color_shadow = Color( 0.156863, 0.658824, 0.635294, 1 )
+ProgressBar/fonts/font = SubResource( 12 )
+ProgressBar/styles/bg = SubResource( 13 )
+ProgressBar/styles/fg = SubResource( 14 )
+TextEdit/fonts/font = SubResource( 16 )
+TextEdit/styles/normal = SubResource( 17 )

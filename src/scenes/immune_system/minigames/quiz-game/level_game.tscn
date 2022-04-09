@@ -87,7 +87,6 @@ margin_bottom = 269.0
 size_flags_vertical = 3
 
 [node name="game_over" type="Panel" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 
