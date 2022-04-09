@@ -8,33 +8,21 @@ export(Color) var color_right
 export(Color) var color_wrong
 var buttons := []
 var index := 0
-var quiz_shuffle := []
 var correct := 0
 var timer := 10
 var data := []
-var information :=[]
-
-
-
-
-
-
 
 onready var question_texts := $question_info/txt_question
 
-func load_save():
-	return information
 
 func _on_request_completed(result, response_code, headers, body):
 	var json = JSON.parse(body.get_string_from_utf8())
-	information = json.result
-	print(information)
+	print(json.result)
 	for _button in $question_holder.get_children():
 		buttons.append(_button)
 	for _button in $question_holder2.get_children():
 		buttons.append(_button)
-	quiz_shuffle = load_save()
-	data = load_save()
+	data = json.result
 	load_quiz()		
 	
 func _ready() -> void:
@@ -45,7 +33,7 @@ func load_quiz() -> void:
 	if index >= data.size():
 		game_over()
 		return
-	question_texts.text = str(quiz_shuffle[index].question)
+	question_texts.text = str(data[index].question)
 	var options = randomize_array(data[index].options)	
 	for i in buttons.size():
 		buttons[i].text = str(options[i])
