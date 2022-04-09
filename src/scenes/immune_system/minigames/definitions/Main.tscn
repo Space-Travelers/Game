@@ -145,3 +145,5 @@ sustancias que hacen posible el desarrollo de varias actividades"
 
 [node name="endPoint" parent="Node3" instance=ExtResource( 3 )]
 position = Vector2( 546, 286 )
+
+[node name="HTTPRequest2" type="HTTPRequest" parent="."]
