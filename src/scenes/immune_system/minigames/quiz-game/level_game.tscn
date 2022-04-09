@@ -142,4 +142,6 @@ margin_bottom = 592.0
 texture = ExtResource( 1 )
 expand = true
 
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
 [connection signal="pressed" from="game_over/button_restart" to="." method="_on_button_restart_pressed"]
