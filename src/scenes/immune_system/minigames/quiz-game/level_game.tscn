@@ -87,8 +87,11 @@ margin_bottom = 269.0
 size_flags_vertical = 3
 
 [node name="game_over" type="Panel" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_top = 2.0
+margin_bottom = 2.0
 
 [node name="txt_info" type="Label" parent="game_over"]
 anchor_left = 0.5
@@ -134,10 +137,10 @@ stream = ExtResource( 3 )
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="TextureRect" type="TextureRect" parent="ParallaxBackground"]
-margin_left = 5.0
-margin_top = -11.0
-margin_right = 1009.0
-margin_bottom = 592.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 1014.0
+margin_bottom = 613.0
 texture = ExtResource( 1 )
 expand = true
 

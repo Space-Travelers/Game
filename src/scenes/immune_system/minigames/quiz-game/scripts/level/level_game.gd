@@ -17,7 +17,6 @@ onready var question_texts := $question_info/txt_question
 
 func _on_request_completed(result, response_code, headers, body):
 	var json = JSON.parse(body.get_string_from_utf8())
-	print(json.result)
 	for _button in $question_holder.get_children():
 		buttons.append(_button)
 	for _button in $question_holder2.get_children():
