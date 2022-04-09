@@ -8,9 +8,26 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Resource",
+"class": "BDQuiz",
+"language": "GDScript",
+"path": "res://src/scenes/immune_system/minigames/quiz-game/scripts/resource/bd_quiz.gd"
+}, {
+"base": "Resource",
+"class": "QuizQuestion",
+"language": "GDScript",
+"path": "res://src/scenes/immune_system/minigames/quiz-game/scripts/resource/res_question.gd"
+} ]
+_global_script_class_icons={
+"BDQuiz": "",
+"QuizQuestion": ""
+}
+
 [application]
 
 config/name="Comunitarias"
+run/main_scene="res://src/scenes/immune_system/minigames/quiz-game/level_game.tscn"
 run/low_processor_mode=true
 config/icon="res://icon.png"
 

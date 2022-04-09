@@ -11,5 +11,5 @@ func _ready():
 
 
 func _on_Button_button_up():
-	get_tree().change_scene("res://src/scenes/immune_system/challenges/definitions/Main.tscn")
+	get_tree().change_scene("res://src/scenes/immune_system/minigames/definitions/Main.tscn")
 	pass # Replace with function body.

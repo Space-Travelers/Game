@@ -6,13 +6,8 @@
 [ext_resource path="res://assets/UI/elements/definition-container.svg" type="Texture" id=4]
 [ext_resource path="res://font.tres" type="DynamicFont" id=5]
 [ext_resource path="res://assets/ttf/CANDARA.TTF" type="DynamicFontData" id=6]
-<<<<<<< HEAD:src/scenes/immune_system/challenges/definitions/Main.tscn
-[ext_resource path="res://assets/UI/buttons/check.png" type="Texture" id=7]
-[ext_resource path="res://src/scenes/immune_system/challenges/definitions/checkbutton.gd" type="Script" id=8]
-=======
 [ext_resource path="res://src/scenes/immune_system/minigames/definitions/Main.gd" type="Script" id=7]
 [ext_resource path="res://src/scenes/immune_system/minigames/definitions/Definition-container.gd" type="Script" id=8]
->>>>>>> 84196af9d27a538416e28028e8b52d6a68b435d3:src/scenes/immune_system/minigames/definitions/Main.tscn
 
 [sub_resource type="DynamicFont" id=4]
 size = 25
@@ -46,22 +41,21 @@ position = Vector2( 221, 403 )
 startPoint = true
 
 [node name="Label2" type="Label" parent="."]
-margin_left = 433.0
-margin_top = 47.0
-margin_right = 917.0
-margin_bottom = 120.0
-rect_pivot_offset = Vector2( 167, 676 )
+margin_left = 450.0
+margin_top = 45.0
+margin_right = 934.0
+margin_bottom = 118.0
 custom_colors/font_color = Color( 0.486275, 0.988235, 0.827451, 1 )
 custom_fonts/font = ExtResource( 5 )
 text = "ESCANER DE
- CUERPOS EXTRAÑOS"
+CUERPOS EXTRAÑOS"
 align = 2
 
 [node name="Label" type="Label" parent="."]
-margin_left = 121.0
-margin_top = 61.0
-margin_right = 433.0
-margin_bottom = 172.0
+margin_left = 94.0
+margin_top = 52.0
+margin_right = 531.0
+margin_bottom = 125.0
 custom_fonts/font = ExtResource( 5 )
 text = "Une las partes con sus  definiciones para matar al virus"
 autowrap = true
@@ -151,20 +145,3 @@ sustancias que hacen posible el desarrollo de varias actividades"
 
 [node name="endPoint" parent="Node3" instance=ExtResource( 3 )]
 position = Vector2( 546, 286 )
-<<<<<<< HEAD:src/scenes/immune_system/challenges/definitions/Main.tscn
-
-[node name="endPoint3" parent="." instance=ExtResource( 3 )]
-position = Vector2( 549, 403 )
-
-[node name="TextureButton" type="TextureButton" parent="."]
-margin_left = 871.0
-margin_top = 467.0
-margin_right = 995.0
-margin_bottom = 595.0
-rect_scale = Vector2( 0.578253, 0.578253 )
-texture_normal = ExtResource( 7 )
-script = ExtResource( 8 )
-
-[connection signal="button_up" from="TextureButton" to="TextureButton" method="_on_TextureButton_button_up"]
-=======
->>>>>>> 84196af9d27a538416e28028e8b52d6a68b435d3:src/scenes/immune_system/minigames/definitions/Main.tscn

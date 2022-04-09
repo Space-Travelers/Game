@@ -7,22 +7,22 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 1 ), ExtResource( 2 ) ],
-"loop": true,
-"name": "jump",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 2 ) ],
 "loop": true,
 "name": "run",
 "speed": 2.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 1 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "jump",
+"speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 252, 221 )
+[sub_resource type="CircleShape2D" id=2]
+radius = 229.495
 
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 132.851, 6.06558 )
+[sub_resource type="CircleShape2D" id=3]
+radius = 17.9489
 
 [node name="Lymphocyte" type="KinematicBody2D"]
 position = Vector2( -23, 35 )
@@ -34,14 +34,15 @@ frames = SubResource( 1 )
 animation = "run"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -12, -4 )
+position = Vector2( -6.72958, -12.5522 )
+scale = Vector2( -1.02632, 0.965221 )
 shape = SubResource( 2 )
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( -7.98032, 197.577 )
-scale = Vector2( 1.9022, 4.12322 )
+position = Vector2( -13.4591, 163.178 )
+scale = Vector2( -7.09648, 3.04675 )
 shape = SubResource( 3 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
