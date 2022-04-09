@@ -3,34 +3,20 @@ extends Node2D
 
 var nodes_availables;
 var rest_nodes = []
-var definitions = [
-	{
-		'id':1,
-		'word': 'citoplasma',
-		'definition': 'Es la sustancia que ocupa el interior de la célula. Contiene diversas sustancias de reserva en disolución'
-	},
-	{
-		'id':2,
-		'word': 'Membrana Plasmatica',
-		'definition': 'Es fundamental, por que aloja sustancias que hacen posible el desarrollo de varias actividades'
-	},
-	{
-		'id':3,
-		'word': 'Cloroplasto',
-		'definition':'Se encuentran únicamente en las células vegetales. Están limitados por una doble membrana'
-	}
-]
+var definitions
 
 
 func _on_request_completed(result, response_code, headers, body):
 	var json = JSON.parse(body.get_string_from_utf8())
-	print(json.result)
+	definitions = json.result
+	print(definitions)
+	set_information()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$HTTPRequest.connect("request_completed", self, "_on_request_completed")
-	$HTTPRequest.request("https://pokeapi.co/api/v2/pokemon/ditto")
-	set_information()
+	$HTTPRequest.request("https://spacback.herokuapp.com/minigames/definiciones")
+	
 	rest_nodes = get_tree().get_nodes_in_group("zone")
 	nodes_availables = getEndPointsTotal()	
 	for node in rest_nodes:
@@ -38,16 +24,19 @@ func _ready():
 	
 
 func set_information():
-	print('a')
 	var word_nodes = get_tree().get_nodes_in_group("word")
 	var answer_nodes = get_tree().get_nodes_in_group("answer")	
-	
 	for definition in definitions:
 		for word_node in word_nodes:
-			word_node.set_word(definition.word)
-			word_node.id_definition = definition.id;
+			if(word_node.id_definition==0):
+				word_node.set_word(definition.word)
+				word_node.id_definition = definition.id;
+				break;
 		for answer in answer_nodes:
-		 answer.get_node('Definition-container').set_definition(definition.id, definition.definition)
+			var answer_node = answer.get_node('Definition-container')
+			if(answer_node.id_definition == 0):
+				answer_node.set_definition(definition.id, definition.definition)
+				break;
 
 
 func getEndPointsTotal():
