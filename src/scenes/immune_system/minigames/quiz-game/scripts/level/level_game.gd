@@ -12,26 +12,8 @@ var quiz_shuffle := []
 var correct := 0
 var timer := 10
 var data := []
-var information := [
-{  
-	"question": "Se considera como uno de los autores de la teoría celular",
-	"options": ["Janssen" ,"Hooke","Leewenhoek","Virchow"],
-	"correct": "Hooke"
- },{  
-	"question": "Un organismo procariótico se caracteriza por carecer de:",
-	"options": ["Plasmalema" ,"Citoplasma","Carioteca","Ribosomas"],
-	"correct": "Carioteca"
- },{  
-	"question": "La circulación intracelular se realiza a través de:",
-	"options": ["El retículo endoplasmático" ,"Los ribosomas","Los centrosomas","Los dictiosomas"],
-	"correct": "El retículo endoplasmático"
- },
-{  
-	"question": "La digestión tanto intracelular como extracelular es realizada por:",
-	"options": ["R. endoplasmático  rugoso" ,"R. endoplasmático liso","Peroxisoma","Lisosomas"],
-	"correct": "Lisosomas"
- }
-]
+var information :=[]
+
 
 
 
@@ -43,7 +25,10 @@ onready var question_texts := $question_info/txt_question
 func load_save():
 	return information
 
-func _ready() -> void:
+func _on_request_completed(result, response_code, headers, body):
+	var json = JSON.parse(body.get_string_from_utf8())
+	information = json.result
+	print(information)
 	for _button in $question_holder.get_children():
 		buttons.append(_button)
 	for _button in $question_holder2.get_children():
@@ -51,7 +36,11 @@ func _ready() -> void:
 	quiz_shuffle = load_save()
 	data = load_save()
 	load_quiz()		
-
+	
+func _ready() -> void:
+	$HTTPRequest.connect("request_completed", self, "_on_request_completed")
+	$HTTPRequest.request("https://spacback.herokuapp.com/minigames/quiz")
+	
 func load_quiz() -> void:
 	if index >= data.size():
 		game_over()
