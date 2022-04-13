@@ -42,6 +42,20 @@ startPoint = true
 position = Vector2( 221, 403 )
 startPoint = true
 
+[node name="draggable" parent="." groups=["word"] instance=ExtResource( 2 )]
+position = Vector2( 219, 205 )
+word = "Citoplasma"
+
+[node name="draggable2" parent="." groups=["word"] instance=ExtResource( 2 )]
+position = Vector2( 221, 301 )
+index = 1
+word = "Membrana Plasmatica"
+
+[node name="draggable3" parent="." groups=["word"] instance=ExtResource( 2 )]
+position = Vector2( 222, 400 )
+index = 2
+word = "Cloroplasto"
+
 [node name="Label2" type="Label" parent="."]
 margin_left = 450.0
 margin_top = 45.0
@@ -61,20 +75,6 @@ margin_bottom = 125.0
 custom_fonts/font = ExtResource( 5 )
 text = "Une las partes con sus  definiciones para matar al virus"
 autowrap = true
-
-[node name="Node2D" parent="." groups=["word"] instance=ExtResource( 2 )]
-position = Vector2( 219, 205 )
-word = "Citoplasma"
-
-[node name="Node2D2" parent="." groups=["word"] instance=ExtResource( 2 )]
-position = Vector2( 221, 301 )
-index = 1
-word = "Membrana Plasmatica"
-
-[node name="Node2D3" parent="." groups=["word"] instance=ExtResource( 2 )]
-position = Vector2( 222, 400 )
-index = 2
-word = "Cloroplasto"
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 

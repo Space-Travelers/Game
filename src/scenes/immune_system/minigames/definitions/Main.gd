@@ -37,6 +37,14 @@ func set_information():
 			if(answer_node.id_definition == 0):
 				answer_node.set_definition(definition.id, definition.definition)
 				break;
+		for node in rest_nodes:
+			if(node.startPoint && node.id_definition == 0):
+				node.id_definition = definition.id;
+				print(node.id_definition)
+				break;
+				
+				
+				
 
 
 func getEndPointsTotal():
@@ -45,10 +53,7 @@ func getEndPointsTotal():
 		if (!node.startPoint):
 			total= total+1
 	return total
-	
-func getDefinition(word):
-	definitions.map()
-	
+		
 
 func validateAnswers():
 	var answer_nodes = get_tree().get_nodes_in_group("answer")
@@ -56,6 +61,8 @@ func validateAnswers():
 	for answer in answer_nodes:
 		var word_index = answer.get_node('endPoint').id_definition
 		var definiton_index = answer.get_node('Definition-container').id_definition
+		print('word index', word_index)
+		print('defintion index', definiton_index)
 		if (word_index != definiton_index ):
 			return false
 	return true

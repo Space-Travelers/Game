@@ -10,3 +10,4 @@ func set_data(plx,ply,st):
 
 func _ready():
 	pass
+

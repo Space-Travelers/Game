@@ -1,6 +1,6 @@
 extends Sprite
 
-var id_definition
+var id_definition : int
 var definition
 
 
