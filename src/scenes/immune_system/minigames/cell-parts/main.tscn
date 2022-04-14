@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/scenes/shared/dropzone/dropzone.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/scenes/shared/draggable/draggable.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/UI/backgrounds/background_alpha_soup.png" type="Texture" id=3]
+[ext_resource path="res://assets/UI/elements/cell image.png" type="Texture" id=4]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="BackgroundAlphaSoup" type="Sprite" parent="."]
+position = Vector2( 514, 299.25 )
+scale = Vector2( 0.683544, 0.611507 )
+texture = ExtResource( 3 )
+
+[node name="CellImage" type="Sprite" parent="."]
+position = Vector2( 352, 347 )
+scale = Vector2( 0.747755, 0.747755 )
+texture = ExtResource( 4 )
+
+[node name="dropzoneContainer" parent="." instance=ExtResource( 2 )]
+position = Vector2( 727, 273 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 205, 238 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 513, 188 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 540, 339 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 522, 470 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 535, 400 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 153, 300 )
+scale = Vector2( 0.5, 0.5 )
