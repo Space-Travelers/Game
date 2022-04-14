@@ -4,6 +4,7 @@ var selected = false
 export var startPoint : bool
 var id_definition : int
 var color = Color.transparent
+signal dropzone_selected
 
 func _draw():
 	var rect = Rect2(Vector2(-85,-33), Vector2(170,66))
@@ -22,6 +23,7 @@ func select():
 			node.deselect()
 	modulate = Color.green
 	selected = true
+	emit_signal("dropzone_selected")
 
 	
 func deselect():

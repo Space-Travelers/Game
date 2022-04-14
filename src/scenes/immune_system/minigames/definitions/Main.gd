@@ -75,3 +75,4 @@ func definition_selected():
 			print('Ganaste')
 		else:
 			print('Perdiste')
+
