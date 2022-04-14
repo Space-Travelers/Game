@@ -273,6 +273,7 @@ shape = SubResource( 15 )
 position = Vector2( 149.5, 552.932 )
 scale = Vector2( 0.442693, 0.416349 )
 frames = SubResource( 1 )
+frame = 1
 speed_scale = 1.5
 playing = true
 
@@ -363,12 +364,12 @@ script = ExtResource( 14 )
 position = Vector2( 384, 588 )
 shape = SubResource( 14 )
 
-[connection signal="coin_collected" from="game_items/blood-cell" to="." method="_on_bloodcell_coin_collected"]
 [connection signal="coin_collected" from="game_items/blood-cell" to="." method="_on_Node2D_coin_collected"]
-[connection signal="coin_collected" from="game_items/blood-cell4" to="." method="_on_bloodcell_coin_collected"]
+[connection signal="coin_collected" from="game_items/blood-cell" to="." method="_on_bloodcell_coin_collected"]
 [connection signal="coin_collected" from="game_items/blood-cell4" to="." method="_on_Node2D_coin_collected"]
-[connection signal="coin_collected" from="game_items/blood-cell2" to="." method="_on_bloodcell_coin_collected"]
+[connection signal="coin_collected" from="game_items/blood-cell4" to="." method="_on_bloodcell_coin_collected"]
 [connection signal="coin_collected" from="game_items/blood-cell2" to="." method="_on_Node2D_coin_collected"]
-[connection signal="coin_collected" from="game_items/blood-cell3" to="." method="_on_bloodcell_coin_collected"]
+[connection signal="coin_collected" from="game_items/blood-cell2" to="." method="_on_bloodcell_coin_collected"]
 [connection signal="coin_collected" from="game_items/blood-cell3" to="." method="_on_Node2D_coin_collected"]
+[connection signal="coin_collected" from="game_items/blood-cell3" to="." method="_on_bloodcell_coin_collected"]
 [connection signal="button_up" from="Button" to="Button" method="_on_Button_button_up"]
