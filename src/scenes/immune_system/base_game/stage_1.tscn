@@ -96,7 +96,6 @@ shape = SubResource( 4 )
 [node name="Virus" parent="game_items" instance=ExtResource( 15 )]
 position = Vector2( 2461, 398 )
 scale = Vector2( 0.395149, 0.388287 )
-current_stage = 1
 
 [node name="Tall-wall4" type="Sprite" parent="game_items"]
 position = Vector2( 1878, 470 )
@@ -275,6 +274,7 @@ shape = SubResource( 15 )
 position = Vector2( 149.5, 552.932 )
 scale = Vector2( 0.442693, 0.416349 )
 frames = SubResource( 1 )
+frame = 2
 speed_scale = 1.5
 playing = true
 
@@ -373,7 +373,6 @@ autoplay = true
 [connection signal="coin_collected" from="game_items/blood-cell" to="." method="_on_bloodcell_coin_collected"]
 [connection signal="coin_collected" from="game_items/blood-cell" to="CanvasLayer/Label" method="_on_bloodcell_coin_collected"]
 [connection signal="coin_collected" from="game_items/blood-cell4" to="." method="_on_bloodcell_coin_collected"]
-[connection signal="coin_collected" from="game_items/blood-cell4" to="." method="_on_Node2D_coin_collected"]
 [connection signal="coin_collected" from="game_items/blood-cell2" to="." method="_on_bloodcell_coin_collected"]
 [connection signal="coin_collected" from="game_items/blood-cell3" to="." method="_on_bloodcell_coin_collected"]
 [connection signal="button_up" from="Button" to="Button" method="_on_Button_button_up"]

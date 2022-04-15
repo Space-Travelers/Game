@@ -10,7 +10,7 @@ var on_ground = false
 var jump_count = 0
 export var extra_jump = 1
 
-onready var player = $Lymphocyte
+
 onready var animation = $AnimatedSprite;
 
 func _ready():

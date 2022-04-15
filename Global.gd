@@ -9,7 +9,4 @@ var stage = 1
 var playerx=49
 var playery=353
 
-func set_data(plx,ply,st):
-	playerx=plx
-	playery=ply
 

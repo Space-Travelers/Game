@@ -80,14 +80,15 @@ func definition_selected():
 func _on_Checkbtn_pressed():
 	if(nodes_availables == 0):
 		if(validateAnswers()):
-			print('Ganaste')			
+			print('Ganaste')
+			Global.lost_challenge = false
 			get_tree().change_scene("res://src/scenes/immune_system/base_game/stage_2.tscn")
 		else:
 			if (Global.coins - 2 > -1):
 				Global.coins = Global.coins - (Global.coins/2) + 1
 			print('Perdiste')
 			Global.lost_challenge = true
-			get_tree().change_scene("res://src/scenes/immune_system/base_game/stage_2.tscn")
+			get_tree().change_scene("res://src/scenes/immune_system/base_game/stage_1.tscn")
 			
 			print(Global.coins)
 	else:

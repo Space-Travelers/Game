@@ -72,6 +72,3 @@ limit_bottom = 180
 smoothing_enabled = true
 smoothing_speed = 10.0
 editor_draw_limits = true
-
-[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
