@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://assets/UI/immune_system/room/blood2.png" type="Texture" id=1]
 [ext_resource path="res://assets/UI/immune_system/room/tall-wall.png" type="Texture" id=2]
@@ -17,6 +17,8 @@
 [ext_resource path="res://src/scenes/immune_system/base_game/Virus.tscn" type="PackedScene" id=15]
 [ext_resource path="res://src/scenes/immune_system/base_game/Button.gd" type="Script" id=16]
 [ext_resource path="res://assets/sounds/background_sounds/immune_system.mp3" type="AudioStream" id=17]
+[ext_resource path="res://src/scenes/immune_system/base_game/dialogs/DialogUI.tscn" type="PackedScene" id=18]
+[ext_resource path="res://src/scenes/immune_system/base_game/tutorialdialogue.tscn" type="PackedScene" id=19]
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 347.002, 134.95 )
@@ -50,9 +52,6 @@ extents = Vector2( 126.481, 100.577 )
 [sub_resource type="DynamicFont" id=2]
 size = 27
 font_data = ExtResource( 13 )
-
-[sub_resource type="RectangleShape2D" id=14]
-extents = Vector2( 107, 10 )
 
 [node name="RoomOne" type="Node2D"]
 script = ExtResource( 12 )
@@ -96,6 +95,9 @@ shape = SubResource( 4 )
 [node name="Virus" parent="game_items" instance=ExtResource( 15 )]
 position = Vector2( 2461, 398 )
 scale = Vector2( 0.395149, 0.388287 )
+
+[node name="DialogBox" parent="game_items/Virus" instance=ExtResource( 18 )]
+dialogue_file = "res://resource/immune_system/retroalimentacion.json"
 
 [node name="Tall-wall4" type="Sprite" parent="game_items"]
 position = Vector2( 1878, 470 )
@@ -274,7 +276,6 @@ shape = SubResource( 15 )
 position = Vector2( 149.5, 552.932 )
 scale = Vector2( 0.442693, 0.416349 )
 frames = SubResource( 1 )
-frame = 2
 speed_scale = 1.5
 playing = true
 
@@ -330,6 +331,7 @@ position = Vector2( -223.389, 0.000244141 )
 shape = SubResource( 8 )
 
 [node name="Button" type="TextureButton" parent="."]
+visible = false
 margin_left = 2492.0
 margin_top = 488.0
 margin_right = 2702.0
@@ -359,11 +361,10 @@ custom_fonts/font = SubResource( 2 )
 text = "0"
 script = ExtResource( 14 )
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Tutorial" parent="." instance=ExtResource( 19 )]
+position = Vector2( 19, 340 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 384, 588 )
-shape = SubResource( 14 )
+[node name="DialogBox" parent="Tutorial" instance=ExtResource( 18 )]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 17 )
@@ -376,3 +377,4 @@ autoplay = true
 [connection signal="coin_collected" from="game_items/blood-cell2" to="." method="_on_bloodcell_coin_collected"]
 [connection signal="coin_collected" from="game_items/blood-cell3" to="." method="_on_bloodcell_coin_collected"]
 [connection signal="button_up" from="Button" to="Button" method="_on_Button_button_up"]
+[connection signal="area_entered" from="Tutorial" to="game_items/Lymphocyte" method="_on_Tutorial_area_entered"]

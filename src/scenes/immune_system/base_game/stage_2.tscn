@@ -332,9 +332,10 @@ nextScene = "res://src/scenes/immune_system/minigames/quiz-game/level_game.tscn"
 [node name="blood-flow" type="Node2D" parent="."]
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="blood-flow"]
-position = Vector2( 1288, 563 )
+position = Vector2( 1288, 565 )
 scale = Vector2( 0.442693, 0.416349 )
 frames = SubResource( 1 )
+frame = 1
 speed_scale = 1.5
 playing = true
 

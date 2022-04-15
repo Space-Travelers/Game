@@ -17,6 +17,7 @@ func _ready():
 	animation.play("run_right")
 	if(Global.lost_challenge):
 			set_global_position(Vector2(Global.playerx,Global.playery))
+			animation.play("Loser")
 	
 func _physics_process(delta):
 	if Input.is_action_pressed("ui_right"):
@@ -43,6 +44,14 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity, FLOOR)
 
 func _on_Virus_area_entered(area):
+
+	print("virus area")
+	Global.visible_button = true
 	Global.playerx = global_position.x
 	Global.playery = global_position.y 	
-	pass # Replace with function body.
+
+	pass # Replace with function body. 
+	
+func _on_Tutorial_area_entered(area):
+	print("hey")
+	pass

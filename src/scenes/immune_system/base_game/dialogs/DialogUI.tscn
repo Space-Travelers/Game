@@ -1,28 +1,28 @@
 [gd_scene load_steps=3 format=2]
 
-[sub_resource type="Shader" id=1]
-code = "shader_type canvas_item;
+[ext_resource path="res://src/scenes/immune_system/base_game/dialogs/DialogBox.gd" type="Script" id=1]
+[ext_resource path="res://assets/UI/immune_system/room/dialog-box.png" type="Texture" id=2]
 
-uniform float blur_amount : hint_range(0, 5);
+[node name="DialogBox" type="CanvasLayer"]
+script = ExtResource( 1 )
+dialogue_file = "res://resource/immune_system/dialog.json"
 
-void fragment() {
-	COLOR = textureLod(SCREEN_TEXTURE, SCREEN_UV, blur_amount);
-}
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -339.0
+margin_top = 54.0
+margin_right = 339.0
+margin_bottom = 230.0
+texture = ExtResource( 2 )
+
+[node name="Message" type="RichTextLabel" parent="NinePatchRect"]
+margin_left = 29.0
+margin_top = 21.0
+margin_right = 651.0
+margin_bottom = 154.0
+text = "Message
 "
 
-[sub_resource type="ShaderMaterial" id=2]
-shader = SubResource( 1 )
-shader_param/blur_amount = null
-
-[node name="Node2D" type="Node2D"]
-
-[node name="ColorRect" type="ColorRect" parent="."]
-material = SubResource( 2 )
-margin_right = 1025.0
-margin_bottom = 241.0
-color = Color( 0, 0, 0, 1 )
-
-[node name="ColorRect" type="ColorRect" parent="ColorRect"]
-margin_right = 1015.0
-margin_bottom = 239.0
-color = Color( 0.207031, 0.207031, 0.207031, 1 )
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.4

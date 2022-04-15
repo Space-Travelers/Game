@@ -85,7 +85,7 @@ func _on_Checkbtn_pressed():
 			get_tree().change_scene("res://src/scenes/immune_system/base_game/stage_2.tscn")
 		else:
 			if (Global.coins - 2 > -1):
-				Global.coins = Global.coins - (Global.coins/2) + 1
+				Global.coins = Global.coins - 2
 			print('Perdiste')
 			Global.lost_challenge = true
 			get_tree().change_scene("res://src/scenes/immune_system/base_game/stage_1.tscn")
