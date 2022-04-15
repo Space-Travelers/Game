@@ -10,16 +10,20 @@ var on_ground = false
 var jump_count = 0
 export var extra_jump = 1
 
-
+onready var player = $Lymphocyte
 onready var animation = $AnimatedSprite;
 
 func _ready():
-	animation.play("run")
+	animation.play("run_right")
+	if(Global.lost_challenge):
+			set_global_position(Vector2(Global.playerx,Global.playery))
 	
 func _physics_process(delta):
 	if Input.is_action_pressed("ui_right"):
+		animation.play("run_right")
 		velocity.x = SPEED
 	elif Input.is_action_pressed("ui_left"):
+		animation.play("run_left")
 		velocity.x = -SPEED
 	else:
 		velocity.x = 0
@@ -38,11 +42,7 @@ func _physics_process(delta):
 
 	velocity = move_and_slide(velocity, FLOOR)
 
-
-func _on_Area2D_body_entered(body):
-	pass
-
-
-func _on_Area2D_body_exited(body):
-	pass
-	
+func _on_Virus_area_entered(area):
+	Global.playerx = global_position.x
+	Global.playery = global_position.y 	
+	pass # Replace with function body.

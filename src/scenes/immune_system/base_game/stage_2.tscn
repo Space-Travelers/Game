@@ -53,7 +53,7 @@ font_data = ExtResource( 10 )
 [sub_resource type="RectangleShape2D" id=14]
 extents = Vector2( 107, 10 )
 
-[node name="RoomOne" type="Node2D"]
+[node name="RoomTwo" type="Node2D"]
 script = ExtResource( 2 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -95,6 +95,7 @@ shape = SubResource( 4 )
 [node name="Virus" parent="game_items" instance=ExtResource( 15 )]
 position = Vector2( 2465, 416 )
 scale = Vector2( 0.387639, 0.340305 )
+current_stage = 2
 
 [node name="Tall-wall4" type="Sprite" parent="game_items"]
 position = Vector2( 1878, 470 )
@@ -334,7 +335,7 @@ nextScene = "res://src/scenes/immune_system/minigames/quiz_game/level_game.tscn"
 position = Vector2( 1288, 563 )
 scale = Vector2( 0.442693, 0.416349 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 speed_scale = 1.5
 playing = true
 

@@ -1,8 +1,9 @@
 extends Node2D
 var coins = 0
-
 func _ready():
-	Globals.stage = 2
+	Global.stage=2
+	print("I'M READY")
+
 
 func _on_bloodcell_coin_collected():
 	coins = coins +1

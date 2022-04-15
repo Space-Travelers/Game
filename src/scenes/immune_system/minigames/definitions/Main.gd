@@ -1,7 +1,7 @@
 extends Node2D
-
-
+export var next_stage : String;
 var nodes_availables;
+var nodes_start;
 var rest_nodes = []
 var definitions
 
@@ -66,13 +66,30 @@ func validateAnswers():
 		if (word_index != definiton_index ):
 			return false
 	return true
-		
 
 func definition_selected():
-	nodes_availables = nodes_availables - 1
+	if (nodes_availables > 0):
+		nodes_availables = nodes_availables - 1
+		print(nodes_availables)
+	else: 
+		nodes_start = get_tree().get_nodes_in_group("start")
+		print(nodes_start.size())
+		
+		
+	
+func _on_Checkbtn_pressed():
 	if(nodes_availables == 0):
 		if(validateAnswers()):
-			print('Ganaste')
+			print('Ganaste')			
+			get_tree().change_scene("res://src/scenes/immune_system/base_game/stage_2.tscn")
 		else:
+			if (Global.coins - 2 > -1):
+				Global.coins = Global.coins - (Global.coins/2) + 1
 			print('Perdiste')
+			Global.lost_challenge = true
+			get_tree().change_scene("res://src/scenes/immune_system/base_game/stage_2.tscn")
+			
+			print(Global.coins)
+	else:
+		print("Aún hay nodos")
 
