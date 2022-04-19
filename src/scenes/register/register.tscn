@@ -1,0 +1,134 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/UI/backgrounds/login.png" type="Texture" id=1]
+
+[node name="Control" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 1023.0
+margin_bottom = 599.0
+rect_pivot_offset = Vector2( 529, 317 )
+texture = ExtResource( 1 )
+expand = true
+
+[node name="username" type="LineEdit" parent="."]
+margin_left = 172.0
+margin_top = 91.0
+margin_right = 470.0
+margin_bottom = 142.0
+rect_pivot_offset = Vector2( 411, 99 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 181.0
+margin_top = 67.0
+margin_right = 232.0
+margin_bottom = 83.0
+rect_pivot_offset = Vector2( 402, 123 )
+text = "Nombre"
+
+[node name="username2" type="LineEdit" parent="."]
+margin_left = 525.0
+margin_top = 91.0
+margin_right = 823.0
+margin_bottom = 142.0
+rect_pivot_offset = Vector2( 58, 99 )
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 534.0
+margin_top = 67.0
+margin_right = 585.0
+margin_bottom = 83.0
+rect_pivot_offset = Vector2( 49, 123 )
+text = "Apellido"
+
+[node name="username3" type="LineEdit" parent="."]
+margin_left = 175.0
+margin_top = 192.0
+margin_right = 473.0
+margin_bottom = 243.0
+rect_pivot_offset = Vector2( 408, -2 )
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 184.0
+margin_top = 168.0
+margin_right = 235.0
+margin_bottom = 184.0
+rect_pivot_offset = Vector2( 399, 22 )
+text = "Email"
+
+[node name="username4" type="LineEdit" parent="."]
+margin_left = 528.0
+margin_top = 192.0
+margin_right = 826.0
+margin_bottom = 243.0
+rect_pivot_offset = Vector2( 55, -2 )
+
+[node name="Label4" type="Label" parent="."]
+margin_left = 537.0
+margin_top = 168.0
+margin_right = 588.0
+margin_bottom = 184.0
+rect_pivot_offset = Vector2( 46, 22 )
+text = "Contraseña"
+
+[node name="username5" type="LineEdit" parent="."]
+margin_left = 177.0
+margin_top = 282.0
+margin_right = 475.0
+margin_bottom = 333.0
+rect_pivot_offset = Vector2( 411, 99 )
+
+[node name="Label5" type="Label" parent="."]
+margin_left = 186.0
+margin_top = 258.0
+margin_right = 237.0
+margin_bottom = 274.0
+rect_pivot_offset = Vector2( 402, 123 )
+text = "Edad"
+
+[node name="username6" type="LineEdit" parent="."]
+margin_left = 530.0
+margin_top = 282.0
+margin_right = 828.0
+margin_bottom = 333.0
+rect_pivot_offset = Vector2( 58, 99 )
+
+[node name="Label6" type="Label" parent="."]
+margin_left = 539.0
+margin_top = 258.0
+margin_right = 590.0
+margin_bottom = 274.0
+rect_pivot_offset = Vector2( 49, 123 )
+text = "Nivel"
+
+[node name="username7" type="LineEdit" parent="."]
+margin_left = 180.0
+margin_top = 383.0
+margin_right = 478.0
+margin_bottom = 434.0
+rect_pivot_offset = Vector2( 408, -2 )
+
+[node name="Label7" type="Label" parent="."]
+margin_left = 189.0
+margin_top = 359.0
+margin_right = 240.0
+margin_bottom = 375.0
+rect_pivot_offset = Vector2( 399, 22 )
+text = "Genero"
+
+[node name="username8" type="LineEdit" parent="."]
+margin_left = 533.0
+margin_top = 383.0
+margin_right = 831.0
+margin_bottom = 434.0
+rect_pivot_offset = Vector2( 55, -2 )
+
+[node name="Label8" type="Label" parent="."]
+margin_left = 542.0
+margin_top = 359.0
+margin_right = 593.0
+margin_bottom = 375.0
+rect_pivot_offset = Vector2( 46, 22 )
+text = "School"
