@@ -31,7 +31,7 @@ func _input(event):
 		
 func next_line():
 	dialog_index +=1
-	if Global.dialog_zone == "tutorial":
+	if Global.tutorial:
 		dialogues_messages = dialogues[0]["message"]
 	
 	if dialog_index>=len(dialogues_messages):

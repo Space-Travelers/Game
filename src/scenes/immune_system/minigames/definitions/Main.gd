@@ -82,14 +82,16 @@ func _on_Checkbtn_pressed():
 		if(validateAnswers()):
 			print('Ganaste')
 			Global.lost_challenge = false
+			Global.scan = false
 			get_tree().change_scene("res://src/scenes/immune_system/base_game/stage_2.tscn")
 		else:
 			if (Global.coins - 1 > -1):
 				Global.coins = Global.coins - 1
 			elif Global.coins == 0:
 				print("oops 0 monedas")
-				Global.reset_position = true
+				Global.reset_player = true
 			print('Perdiste')
+			Global.scan = false
 			Global.lost_challenge = true
 			get_tree().change_scene("res://src/scenes/immune_system/base_game/stage_1.tscn")
 			
