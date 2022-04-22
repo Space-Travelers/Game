@@ -3,39 +3,51 @@ extends CanvasLayer
 export(String, FILE, "*.json") var dialogue_file
 
 var dialogues = []
-var current_dialogue_id = 0
-var is_dialogue_active = false
+#Types of dialogues 
+var tutorials = []
+var dialogues_messages = []
+var dialog_index = -1
+var active_dialog = false
 
 func _ready():
 	$NinePatchRect.visible = false
 
+
 func play():	
-	dialogues = load_dialogue()
-	is_dialogue_active = true
+	if active_dialog:
+		return 
+	dialogues = load_dialog()
+	active_dialog = true
 	$NinePatchRect.visible = true
-	next_line()	
+	next_line()
+	
 	
 func _input(event):
-	if not is_dialogue_active:
-		return
-		
-	if event.is_action_pressed("next_message"):
+	if not active_dialog:
+		return		
+	if event.is_action_pressed("next_message") and Global.dialog_zone == "tutorial":
 		print("pressed space")
 		next_line()
 		
 func next_line():
-
-	if current_dialogue_id>=len(dialogues):
+	dialog_index +=1
+	if Global.dialog_zone == "tutorial":
+		dialogues_messages = dialogues[0]["message"]
+	
+	if dialog_index>=len(dialogues_messages):
 		$Timer.start()
 		$NinePatchRect.visible = false
 		Global.tutorial = false
-	print("Current index: %0d" % current_dialogue_id)
-	if(current_dialogue_id<len(dialogues)):
-		$NinePatchRect/Message .text = dialogues[current_dialogue_id]['message']
-		current_dialogue_id +=1
+	print("len of dialog %0d" % len(dialogues_messages))
+	
+	if dialog_index<len(dialogues_messages):
+		$NinePatchRect/Message.text = dialogues_messages[dialog_index]
+		print("Current index: %0d" % dialog_index)
+
+		
 	
 
-func load_dialogue():
+func load_dialog():
 	var file = File.new()
 	if file.file_exists(dialogue_file):
 		file.open(dialogue_file,file.READ)
@@ -43,5 +55,5 @@ func load_dialogue():
 
 
 func _on_Timer_timeout():
-	is_dialogue_active=false
+	active_dialog=false
 	pass # Replace with function body.

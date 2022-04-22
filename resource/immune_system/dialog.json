@@ -1,17 +1,34 @@
-[{
-		"state": "tutorial",
-		"message": "Los linfocitos B permiten que el cuerpo recuerde a los invasores y los reconozca si lo volvieran a invadir."
-	},
+[
+
 
 	{
-		"state": "tutorial",
-		"message": "fin"
+		"type": "tutorial",
+		"message": [
+			"start",
+			"Los linfocitos B permiten que el cuerpo recuerde a los invasores y los reconozca si lo volvieran a invadir.",
+			"Escanea los diferentes cuerpos extraños para que tu linfocito B reconozca a los que planean dañar tu cuerpo!",
+			"fin de prueb"
+
+		]
 	},
 	{
-		"state": "tutorial",
-		"message": "Escanea los diferentes cuerpos extraños para que tu linfocito B reconozca a los que planean dañar tu cuerpo!"
+		"type": "bad-RTR",
+		"message": [
+			"¡No has conseguido vencer a este virus! ¡Trata de nuevo para que no le haga daño a tu cuerpo!"
+		]
+	},
+	{
+		"type": "good-RTR",
+		"message": [
+			"¡Felicitaciones! ¡Has conseguido vencer exitosamente a este virus!"
+		]
+	},
+	{
+		"type": "bad-RTR",
+		"message": [
+			"¡No tienes suficientes glóbulos blancos para vencer a este virus!"
+		]
 	}
-
 
 
 ]

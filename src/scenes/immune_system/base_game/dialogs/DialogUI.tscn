@@ -21,8 +21,6 @@ margin_left = 29.0
 margin_top = 21.0
 margin_right = 651.0
 margin_bottom = 154.0
-text = "Message
-"
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.4

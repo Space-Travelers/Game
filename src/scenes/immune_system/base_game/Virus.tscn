@@ -8,7 +8,7 @@
 radius = 326.038
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 387.25, 207.25 )
+extents = Vector2( 164.75, 207.25 )
 
 [node name="Virus" type="Area2D"]
 script = ExtResource( 3 )
@@ -31,5 +31,5 @@ texture = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -560.75, 99 )
+position = Vector2( -338.25, 99 )
 shape = SubResource( 2 )
