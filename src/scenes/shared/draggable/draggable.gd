@@ -7,7 +7,7 @@ signal send_word
 export var index : int
 export var word : String
 export var id_definition : int
-onready var only_once : bool = true
+export var parts_game : bool
 
 
 # Called when the node enters the scene tree for the first time.
@@ -15,6 +15,12 @@ func _ready():
 	rest_nodes = get_tree().get_nodes_in_group("zone")
 	rest_point = rest_nodes[index].global_position
 	rest_nodes[index].select()
+	if(parts_game):
+		var label = get_node("Label")
+		print(label)
+		label.text = word
+		
+	
 	
 	
 
@@ -23,7 +29,6 @@ func set_word(definiton_word:String):
 	var label = get_node("Label")
 	label.text = word
 			
-
 
 
 func _on_Area2D_input_event(viewport, event, shape_idx):

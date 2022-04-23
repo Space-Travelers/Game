@@ -15,7 +15,7 @@ func _on_request_completed(result, response_code, headers, body):
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$HTTPRequest.connect("request_completed", self, "_on_request_completed")
-	$HTTPRequest.request("https://spacback.herokuapp.com/minigames/definiciones")
+	$HTTPRequest.request("https://spacetravelers.herokuapp.com/minigames/definiciones")
 	
 	rest_nodes = get_tree().get_nodes_in_group("zone")
 	nodes_availables = getEndPointsTotal()	
