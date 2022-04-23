@@ -10,6 +10,7 @@ var scan = false
 var rest = true
 var dialog_zone = "tutorial"
 var reset_player = false
+var level = 1
 
 
 var playerx=49

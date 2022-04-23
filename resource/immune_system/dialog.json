@@ -11,24 +11,7 @@
 
 		]
 	},
-	{
-		"type": "bad-RTR",
-		"message": [
-			"¡No has conseguido vencer a este virus! ¡Trata de nuevo para que no le haga daño a tu cuerpo!"
-		]
-	},
-	{
-		"type": "good-RTR",
-		"message": [
-			"¡Felicitaciones! ¡Has conseguido vencer exitosamente a este virus!"
-		]
-	},
-	{
-		"type": "bad-RTR",
-		"message": [
-			"¡No tienes suficientes glóbulos blancos para vencer a este virus!"
-		]
-	}
+	
 
 
 ]

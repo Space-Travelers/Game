@@ -26,7 +26,6 @@ func _input(event):
 	if not active_dialog:
 		return		
 	if event.is_action_pressed("next_message") and Global.dialog_zone == "tutorial":
-		print("pressed space")
 		next_line()
 		
 func next_line():

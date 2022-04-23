@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/scanning01.png-07df817b7277e3970c0284569c713167.stex"
+path="res://.import/scan.png-18d2b8c8b79fd028e7930fdd62c4bedb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI/immune_system/lymphocyte/scanning01.png"
-dest_files=[ "res://.import/scanning01.png-07df817b7277e3970c0284569c713167.stex" ]
+source_file="res://assets/UI/immune_system/lymphocyte/scan.png"
+dest_files=[ "res://.import/scan.png-18d2b8c8b79fd028e7930fdd62c4bedb.stex" ]
 
 [params]
 

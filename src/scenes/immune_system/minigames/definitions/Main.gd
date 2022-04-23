@@ -74,7 +74,9 @@ func definition_selected():
 	else: 
 		nodes_start = get_tree().get_nodes_in_group("start")
 		print(nodes_start.size())
-		
+
+	
+	
 		
 	
 func _on_Checkbtn_pressed():
