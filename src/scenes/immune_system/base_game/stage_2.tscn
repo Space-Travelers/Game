@@ -334,7 +334,7 @@ nextScene = "res://src/scenes/immune_system/minigames/quiz_game/level_game.tscn"
 position = Vector2( 1288, 563 )
 scale = Vector2( 0.442693, 0.416349 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 speed_scale = 1.5
 playing = true
 
