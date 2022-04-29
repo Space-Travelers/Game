@@ -7,7 +7,7 @@ func _ready():
 	pass # Replace with function body.
 
 func _process(delta):
-	if Global.visible_button:
+	if Global.visible_button and Global.coins>0:
 		show()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

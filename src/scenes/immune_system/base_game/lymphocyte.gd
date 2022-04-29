@@ -71,3 +71,6 @@ func _on_lost_challenge_area2_area_entered(area):
 	if Global.lost_challenge and Global.coins > 0:
 		set_global_position(Vector2(Global.playerx,Global.playery))
 		animation.play("Loser")
+
+func reset_lymp():
+	set_global_position(Vector2(Global.posxplayer,Global.posyplayer))

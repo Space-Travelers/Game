@@ -84,7 +84,6 @@ texture = ExtResource( 24 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="game_items/Wall-3/StaticBody2D"]
 position = Vector2( -11.1797, 15.7218 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 4 )
 
 [node name="Virus" parent="game_items" instance=ExtResource( 15 )]
@@ -284,10 +283,10 @@ text = "0"
 script = ExtResource( 14 )
 
 [node name="help" type="TextureButton" parent="CanvasLayer"]
-margin_left = 915.0
-margin_top = 508.0
-margin_right = 1065.0
-margin_bottom = 658.0
+margin_left = 6.10352e-05
+margin_top = 521.0
+margin_right = 150.0
+margin_bottom = 671.0
 rect_scale = Vector2( 0.580859, 0.595155 )
 texture_normal = ExtResource( 22 )
 

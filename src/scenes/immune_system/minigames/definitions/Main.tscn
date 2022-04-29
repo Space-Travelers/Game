@@ -58,8 +58,9 @@ word = "Cloroplasto"
 [node name="Label2" type="Label" parent="."]
 margin_left = 450.0
 margin_top = 45.0
-margin_right = 934.0
-margin_bottom = 118.0
+margin_right = 1015.0
+margin_bottom = 184.0
+rect_scale = Vector2( 0.814356, 0.489741 )
 custom_colors/font_color = Color( 0.486275, 0.988235, 0.827451, 1 )
 custom_fonts/font = ExtResource( 5 )
 text = "ESCANER DE
@@ -69,8 +70,9 @@ align = 2
 [node name="Label" type="Label" parent="."]
 margin_left = 94.0
 margin_top = 52.0
-margin_right = 531.0
-margin_bottom = 125.0
+margin_right = 691.0
+margin_bottom = 262.0
+rect_scale = Vector2( 0.558912, 0.520563 )
 custom_fonts/font = ExtResource( 5 )
 text = "Une las partes con sus  definiciones para matar al virus"
 autowrap = true

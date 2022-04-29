@@ -15,6 +15,7 @@ func _on_lost_challenge_area2_area_entered(area):
 	if Global.coins == 0:
 		$Panel/Label.text = "Hey! No tienes suficientes\nmonedas"
 		$Panel.show() 	
+		$restart.show()
 
 
 func _on_TextureButton_pressed():
@@ -22,9 +23,9 @@ func _on_TextureButton_pressed():
 
 
 
-func _on_help_pressed():
-	$"Help-panel/Ayuda".show() # Replace with function body.
 
-
-func _on_close_pressed():
-	$"Help-panel/Ayuda".hide()
+func _on_restart_pressed():
+	print("reset")
+	$Panel.hide()
+	$restart.hide()
+	$game_items/Lymphocyte.reset_lymp() # Replace with function body.
