@@ -26,7 +26,7 @@ func _on_request_completed(result, response_code, headers, body):
 	
 func _ready() -> void:
 	$HTTPRequest.connect("request_completed", self, "_on_request_completed")
-	$HTTPRequest.request("https://spacback.herokuapp.com/minigames/quiz")
+	$HTTPRequest.request("https://spacetravelers.herokuapp.com/minigames/quiz")
 	
 func load_quiz() -> void:
 	if index >= data.size():
