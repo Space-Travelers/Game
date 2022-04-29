@@ -107,12 +107,13 @@ margin_bottom = 274.0
 rect_pivot_offset = Vector2( 49, 123 )
 text = "Nivel"
 
-[node name="genero" type="LineEdit" parent="."]
-margin_left = 180.0
-margin_top = 383.0
-margin_right = 478.0
-margin_bottom = 434.0
-rect_pivot_offset = Vector2( 408, -2 )
+[node name="genero" type="OptionButton" parent="."]
+anchor_right = 4.585
+anchor_bottom = 5.934
+margin_left = 177.0
+margin_top = 387.0
+margin_right = 294.6
+margin_bottom = 203.64
 
 [node name="Label7" type="Label" parent="."]
 margin_left = 189.0
@@ -147,5 +148,6 @@ text = "Registrar"
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 
+[connection signal="item_selected" from="genero" to="." method="_on_genero_item_selected"]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]

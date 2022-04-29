@@ -1,21 +1,32 @@
 extends Node
 
+onready var drop_menu_down = $genero
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 
+
+var genero = "M"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	add_items()
 
-
+func add_items():
+	drop_menu_down.add_item("Masculino")
+	drop_menu_down.add_item("Femenino")
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
 
 
+func _on_genero_item_selected(index):
+	var current_select=index		
+	if current_select == 0:
+		genero="M"
+	if current_select == 1:
+		genero="F"
+	print(genero)
+	
 func _on_Button_pressed():
 	var headers = ["Content-Type: application/json"]
 	var body = {"name": $username.get_text(),
@@ -41,3 +52,5 @@ func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 			else:
 				print("errot")
 	
+
+
