@@ -1,19 +1,36 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://src/scenes/immune_system/base_game/dialogs/Dialog.gd" type="Script" id=1]
+[ext_resource path="res://src/scenes/immune_system/base_game/dialogs/DialogBox.gd" type="Script" id=1]
+[ext_resource path="res://assets/UI/immune_system/room/dialog-box.png" type="Texture" id=2]
+[ext_resource path="res://assets/ttf/SpaceGrotesk-Regular.ttf" type="DynamicFontData" id=3]
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 3 )
 
-[node name="ColorRect" type="ColorRect" parent="."]
-margin_left = 41.0
-margin_top = 64.0
-margin_right = 771.0
-margin_bottom = 254.0
+[node name="DialogBox" type="CanvasLayer"]
 script = ExtResource( 1 )
+dialogue_file = "res://resource/immune_system/dialog.json"
 
-[node name="Text" type="RichTextLabel" parent="ColorRect"]
-margin_right = 689.0
-margin_bottom = 83.0
-text = "asdadsasda"
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -340.0
+margin_top = -275.0
+margin_right = 615.0
+margin_bottom = -99.0
+rect_scale = Vector2( 0.708214, 0.729725 )
+texture = ExtResource( 2 )
 
-[node name="Timer" type="Timer" parent="ColorRect"]
+[node name="Message" type="Label" parent="NinePatchRect"]
+margin_left = 40.2961
+margin_top = 21.0
+margin_right = 920.296
+margin_bottom = 154.0
+custom_fonts/font = SubResource( 1 )
+autowrap = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.4
