@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/UI/backgrounds/background_alpha_soup.png" type="Texture" id=1]
 [ext_resource path="res://src/scenes/shared/draggable/draggable.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://assets/ttf/CANDARA.TTF" type="DynamicFontData" id=6]
 [ext_resource path="res://src/scenes/immune_system/minigames/definitions/Main.gd" type="Script" id=7]
 [ext_resource path="res://src/scenes/immune_system/minigames/definitions/Definition-container.gd" type="Script" id=8]
+[ext_resource path="res://theme/st.tres" type="Theme" id=9]
 [ext_resource path="res://assets/UI/buttons/check.png" type="Texture" id=10]
 
 [sub_resource type="DynamicFont" id=4]
@@ -164,4 +165,17 @@ visible = false
 margin_right = 1022.0
 margin_bottom = 594.0
 
+[node name="AcceptDialog" type="AcceptDialog" parent="."]
+margin_left = 315.0
+margin_top = 488.0
+margin_right = 680.0
+margin_bottom = 546.0
+theme = ExtResource( 9 )
+popup_exclusive = true
+window_title = "Resultados"
+resizable = true
+dialog_hide_on_ok = false
+
 [connection signal="pressed" from="Check-btn" to="." method="_on_Checkbtn_pressed"]
+[connection signal="confirmed" from="AcceptDialog" to="." method="_on_AcceptDialog_confirmed"]
+[connection signal="modal_closed" from="AcceptDialog" to="." method="_on_AcceptDialog_modal_closed"]

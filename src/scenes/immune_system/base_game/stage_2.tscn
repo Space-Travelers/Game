@@ -89,7 +89,6 @@ texture = ExtResource( 23 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="game_items/Wall-3/StaticBody2D"]
 position = Vector2( 1.72119, 6.92041 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 4 )
 
 [node name="Virus" parent="game_items" instance=ExtResource( 15 )]
