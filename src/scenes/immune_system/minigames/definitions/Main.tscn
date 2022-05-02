@@ -70,9 +70,14 @@ align = 2
 [node name="Label" type="Label" parent="."]
 margin_left = 94.0
 margin_top = 52.0
+<<<<<<< HEAD
 margin_right = 691.0
 margin_bottom = 262.0
 rect_scale = Vector2( 0.558912, 0.520563 )
+=======
+margin_right = 525.0
+margin_bottom = 166.0
+>>>>>>> 1b40ec7 (validations)
 custom_fonts/font = ExtResource( 5 )
 text = "Une las partes con sus  definiciones para matar al virus"
 autowrap = true
