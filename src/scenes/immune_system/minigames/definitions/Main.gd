@@ -5,7 +5,8 @@ var nodes_start;
 var rest_nodes = []
 var definitions
 var correct = 0;
-
+var incorrect = 0;
+var game_state;
 
 func _on_request_completed(result, response_code, headers, body):
 	var json = JSON.parse(body.get_string_from_utf8())
@@ -82,9 +83,12 @@ func validateAnswers():
 		print('word index', word_index)
 		print('defintion index', definiton_index)
 		if (word_index != definiton_index ):
-			return false
-	return true
-
+			var endpoint = answer.get_node('endPoint')
+			endpoint.modulate = Color.red
+			incorrect += 1;
+		else:
+			correct +=1;
+			
 func definition_selected():
 	if (nodes_availables > 0):
 		nodes_availables = nodes_availables - 1
@@ -99,23 +103,41 @@ func definition_selected():
 	
 func _on_Checkbtn_pressed():
 	if(nodes_availables == 0):
-		if(validateAnswers()):
-			print('Ganaste')
-			Global.lost_challenge = false
-			Global.scan = false
-			get_tree().change_scene("res://src/scenes/immune_system/base_game/stage_2.tscn")
+		validateAnswers()
+		if(correct==3):
+			game_state = "win"
+			$AcceptDialog.dialog_text = "Cool! Tienes todas las respuestas correctas"
+			$AcceptDialog.popup()
 		else:
-			if (Global.coins - 1 > -1):
-				Global.coins = Global.coins - 1
-			elif Global.coins == 0:
-				print("oops 0 monedas")
-				Global.reset_player = true
-			print('Perdiste')
-			Global.scan = false
-			Global.lost_challenge = true
-			get_tree().change_scene("res://src/scenes/immune_system/base_game/stage_1.tscn")
-			
-			print(Global.coins)
+			game_state = "lose"
+			$AcceptDialog.dialog_text = "Oh no! te has equivocado en "+String(incorrect)
+			$AcceptDialog.popup()			
 	else:
-		print("Aún hay nodos")
+		game_state = "not_finished"
+		$AcceptDialog.dialog_text = "No has completado el juego"
+		$AcceptDialog.popup()
+		
+
+func game_finished():
+	if(game_state=="win"):
+		Global.lost_challenge = false
+		Global.scan = false
+		get_tree().change_scene("res://src/scenes/immune_system/base_game/stage_2.tscn")
+	elif(game_state=="lose"):
+		if (Global.coins - 1 > -1):
+				Global.coins = Global.coins - 1
+		elif Global.coins == 0:
+			print("oops 0 monedas")
+			Global.reset_player = true
+		Global.scan = false
+		Global.lost_challenge = true
+		get_tree().change_scene("res://src/scenes/immune_system/base_game/stage_1.tscn")
+		print(Global.coins);
+	else:
+		$AcceptDialog.hide()
+		
+
+
+func _on_AcceptDialog_confirmed():
+	game_finished()
 
