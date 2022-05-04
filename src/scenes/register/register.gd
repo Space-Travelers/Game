@@ -50,18 +50,7 @@ func _on_Button_pressed():
 	$avatar.show()
 
 
-func _on_buttonRight_pressed():
-	current_avatar_index +=1;
-	if (current_avatar_index>3):
-		current_avatar_index = 1;
-	change_img_avatar(avatars["avatar"+String(current_avatar_index)])
 
-
-func _on_buttonLeft_pressed():
-	current_avatar_index -=1;
-	if (current_avatar_index<1):
-		current_avatar_index = 3;
-	change_img_avatar(avatars["avatar"+String(current_avatar_index)])
 
 
 
@@ -91,3 +80,17 @@ func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 				print(body.get_string_from_utf8())
 			else:
 				print("erro prueba")
+
+
+func _on_buttonRight_pressed():
+	current_avatar_index +=1;
+	if (current_avatar_index>3):
+		current_avatar_index = 1;
+	change_img_avatar(avatars["avatar"+String(current_avatar_index)])
+
+
+func _on_buttonLeft_pressed():
+	current_avatar_index -=1;
+	if (current_avatar_index<1):
+		current_avatar_index = 3;
+	change_img_avatar(avatars["avatar"+String(current_avatar_index)])
