@@ -1,8 +1,15 @@
-[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://assets/UI/backgrounds/login.png" type="Texture" id=1]
-[ext_resource path="res://theme/st.tres" type="Theme" id=2]
-[ext_resource path="res://src/scenes/register/register.gd" type="Script" id=3]
+[gd_scene load_steps=11 format=2]
+
+
+[ext_resource path="res://assets/UI/buttons/button-right.svg" type="Texture" id=4]
+[ext_resource path="res://font.tres" type="DynamicFont" id=5]
+[ext_resource path="res://assets/UI/backgrounds/Select-avatar.png" type="Texture" id=6]
+[ext_resource path="res://assets/UI/elements/container - select avatar.svg" type="Texture" id=7]
+[ext_resource path="res://assets/UI/buttons/button-left.svg" type="Texture" id=8]
+[ext_resource path="res://assets/UI/astronauts/avatar1.svg" type="Texture" id=9]
+[ext_resource path="res://assets/UI/buttons/check.png" type="Texture" id=10]
+
 
 [node name="Control" type="Control"]
 margin_right = 40.0
@@ -144,6 +151,71 @@ margin_top = 457.0
 margin_right = 613.0
 margin_bottom = 505.0
 theme = ExtResource( 2 )
+
+text = "Siguiente"
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="avatar" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Sprite" type="Sprite" parent="avatar"]
+position = Vector2( 260.281, 208 )
+scale = Vector2( 0.679894, 0.612016 )
+texture = ExtResource( 6 )
+offset = Vector2( 368.762, 149.506 )
+
+[node name="Container-SelectAvatar" type="Sprite" parent="avatar"]
+position = Vector2( 527, 142 )
+scale = Vector2( 0.624183, 0.624183 )
+texture = ExtResource( 7 )
+
+[node name="Label" type="Label" parent="avatar/Container-SelectAvatar"]
+margin_left = -350.859
+margin_top = -57.6754
+margin_right = 343.141
+margin_bottom = 48.3246
+custom_fonts/font = ExtResource( 5 )
+text = "Seleccione un avatar"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="astronauta" type="Sprite" parent="avatar"]
+position = Vector2( 533, 374 )
+scale = Vector2( 0.588658, 0.597169 )
+texture = ExtResource( 9 )
+
+[node name="buttonRight" type="TextureButton" parent="avatar"]
+margin_left = 670.0
+margin_top = 288.0
+margin_right = 795.0
+margin_bottom = 437.0
+texture_normal = ExtResource( 8 )
+
+[node name="buttonLeft" type="TextureButton" parent="avatar"]
+margin_left = 263.0
+margin_top = 284.0
+margin_right = 388.0
+margin_bottom = 433.0
+texture_normal = ExtResource( 4 )
+
+[node name="register" type="TextureButton" parent="avatar"]
+margin_left = 879.0
+margin_top = 446.0
+margin_right = 1003.0
+margin_bottom = 574.0
+texture_normal = ExtResource( 10 )
+expand = true
+
+[connection signal="item_selected" from="genero" to="." method="_on_genero_item_selected"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
+[connection signal="pressed" from="avatar/buttonRight" to="." method="_on_buttonRight_pressed"]
+[connection signal="pressed" from="avatar/buttonLeft" to="." method="_on_buttonLeft_pressed"]
+[connection signal="pressed" from="avatar/register" to="." method="_on_register_pressed"]
+
 text = "Registrar"
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
@@ -151,3 +223,4 @@ text = "Registrar"
 [connection signal="item_selected" from="genero" to="." method="_on_genero_item_selected"]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
+

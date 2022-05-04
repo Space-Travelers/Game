@@ -15,7 +15,8 @@ func _ready():
 	current_avatar_index = 1;
 
 func change_img_avatar(file):
-	var node = get_node("astronauta")
+	var node = $avatar/astronauta
+
 	node.texture = load(file)
 	
 
