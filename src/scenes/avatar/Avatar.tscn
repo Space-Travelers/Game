@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/UI/backgrounds/Select-avatar.png" type="Texture" id=1]
 [ext_resource path="res://assets/UI/elements/container - select avatar.svg" type="Texture" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://assets/UI/buttons/button-left.svg" type="Texture" id=7]
 [ext_resource path="res://src/scenes/avatar/avatar.gd" type="Script" id=8]
 [ext_resource path="res://assets/UI/astronauts/astronaut-default.svg" type="Texture" id=9]
+[ext_resource path="res://assets/UI/buttons/button-right-gray.png" type="Texture" id=10]
+[ext_resource path="res://assets/UI/buttons/button-left-gray.png" type="Texture" id=11]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 8 )
@@ -52,6 +54,8 @@ margin_top = 288.0
 margin_right = 795.0
 margin_bottom = 437.0
 texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 10 )
+texture_hover = ExtResource( 10 )
 
 [node name="buttonLeft" type="TextureButton" parent="."]
 margin_left = 263.0
@@ -59,6 +63,8 @@ margin_top = 284.0
 margin_right = 388.0
 margin_bottom = 433.0
 texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 11 )
+texture_hover = ExtResource( 11 )
 
 [node name="TextureButton" type="TextureButton" parent="."]
 margin_left = 879.0

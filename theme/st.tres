@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=18 format=2]
+[gd_resource type="Theme" load_steps=19 format=2]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://assets/ttf/SpaceCapitan-Regular.otf"
@@ -65,6 +65,8 @@ corner_detail = 9
 expand_margin_left = 8.0
 expand_margin_top = 8.0
 expand_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxFlat" id=19]
 
 [sub_resource type="DynamicFontData" id=11]
 font_path = "res://assets/ttf/SpaceGrotesk-SemiBold.ttf"
@@ -134,6 +136,8 @@ Label/constants/shadow_offset_y = 1
 Label/fonts/font = SubResource( 9 )
 LineEdit/styles/focus = null
 LineEdit/styles/normal = SubResource( 10 )
+PopupDialog/styles/panel = null
+PopupPanel/styles/panel = SubResource( 19 )
 ProgressBar/colors/font_color = Color( 0.12549, 0.384314, 0.368627, 1 )
 ProgressBar/colors/font_color_shadow = Color( 0.156863, 0.658824, 0.635294, 1 )
 ProgressBar/fonts/font = SubResource( 12 )

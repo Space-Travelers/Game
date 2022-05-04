@@ -8,6 +8,7 @@ var avatars = {
 }
 
 var current_avatar_index;
+var avatar;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,12 +18,15 @@ func change_img_avatar(file):
 	var node = $avatar/astronauta
 
 	node.texture = load(file)
+	
 
 func _on_buttonRight_button_up():
 	current_avatar_index +=1;
 	if (current_avatar_index>3):
 		current_avatar_index = 1;
-	change_img_avatar(avatars["avatar"+String(current_avatar_index)])
+	var name="avatar"+String(current_avatar_index)
+	avatar = name
+	change_img_avatar(avatars[name])
 
 
 func _on_buttonLeft_button_up():
