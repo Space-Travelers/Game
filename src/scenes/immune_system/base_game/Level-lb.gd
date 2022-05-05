@@ -11,4 +11,4 @@ func _ready():
 	pass # Replace with function body.
 
 func _process(delta):
-	text = "Nivel " + String(Global.level) + "/3"
+	text = "NIVEL " + String(Global.level)
