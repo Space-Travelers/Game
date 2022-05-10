@@ -34,3 +34,8 @@ func _on_buttonLeft_button_up():
 	if (current_avatar_index<1):
 		current_avatar_index = 3;
 	change_img_avatar(avatars["avatar"+String(current_avatar_index)])
+
+
+func _on_sala_pressed():
+	get_tree().change_scene("res://src/scenes/immune_system/base_game/stage_1.tscn")
+	 # Replace with function body.

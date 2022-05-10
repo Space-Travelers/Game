@@ -78,3 +78,4 @@ expand = true
 
 [connection signal="button_up" from="buttonRight" to="." method="_on_buttonRight_button_up"]
 [connection signal="button_up" from="buttonLeft" to="." method="_on_buttonLeft_button_up"]
+[connection signal="pressed" from="sala" to="." method="_on_sala_pressed"]

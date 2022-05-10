@@ -35,7 +35,7 @@ margin_top = 162.0
 margin_right = 428.0
 margin_bottom = 178.0
 rect_pivot_offset = Vector2( 37, 17 )
-text = "Usuario"
+text = "Correo electrónico"
 
 [node name="Label2" type="Label" parent="."]
 margin_left = 376.0

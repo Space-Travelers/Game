@@ -1,5 +1,6 @@
 extends Node
 var lost_challenge = false
+var first_play= true
 var coin_collected = false
 var coins = 0
 var actual_id_definition = -1

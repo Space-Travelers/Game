@@ -16,6 +16,7 @@ func _on_TextureButton_pressed():
 	var error = $HTTPRequest.request("https://spacetravelers.herokuapp.com/player/login",headers, true, HTTPClient.METHOD_POST, body)
 	if error != OK:
 		push_error(" An error occured in  the HTTP request")
+	get_tree().change_scene("res://src/scenes/room/room.tscn")
 	
 
 

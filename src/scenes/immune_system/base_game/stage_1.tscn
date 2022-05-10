@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=2]
+[gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://assets/UI/immune_system/room/blood2.png" type="Texture" id=1]
 [ext_resource path="res://assets/UI/immune_system/room/tall-wall.png" type="Texture" id=2]
@@ -62,10 +62,15 @@ extents = Vector2( 243, 36 )
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 126.481, 100.577 )
 
+[sub_resource type="DynamicFontData" id=25]
+font_path = "res://assets/ttf/rimouski sb.otf"
+
 [sub_resource type="DynamicFont" id=21]
 size = 100
-outline_color = Color( 0.0941176, 0.0901961, 0.219608, 1 )
-font_data = ExtResource( 13 )
+outline_size = 1
+outline_color = Color( 0.290196, 0.0509804, 0.270588, 1 )
+use_filter = true
+font_data = SubResource( 25 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 27
@@ -330,7 +335,7 @@ shape = SubResource( 15 )
 position = Vector2( 149.5, 552.932 )
 scale = Vector2( 0.442693, 0.416349 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 speed_scale = 1.5
 playing = true
 
@@ -388,17 +393,19 @@ shape = SubResource( 8 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="TextureRect2" type="TextureRect" parent="CanvasLayer"]
-margin_right = 523.0
-margin_bottom = 253.0
-rect_scale = Vector2( 0.360084, 0.24985 )
+margin_top = 12.0
+margin_right = 1256.0
+margin_bottom = 506.0
+rect_scale = Vector2( 0.13289, 0.132345 )
 texture = ExtResource( 26 )
 
 [node name="Label" type="Label" parent="CanvasLayer/TextureRect2"]
-margin_left = 69.0
-margin_top = 60.0
-margin_right = 447.0
-margin_bottom = 215.0
-custom_colors/font_color = Color( 0.0666667, 0.0627451, 0.172549, 1 )
+margin_left = 497.0
+margin_top = 144.0
+margin_right = 640.0
+margin_bottom = 273.0
+rect_scale = Vector2( 2.20951, 1.95931 )
+custom_colors/font_color = Color( 0.290196, 0.0509804, 0.270588, 1 )
 custom_fonts/font = SubResource( 21 )
 text = "0"
 script = ExtResource( 27 )
@@ -531,7 +538,7 @@ texture_normal = ExtResource( 32 )
 position = Vector2( 2143, 485 )
 
 [node name="lost_challenge_obj" type="CollisionShape2D" parent="lost_challenge_area2"]
-position = Vector2( -61, -9 )
+position = Vector2( -6, -9 )
 shape = SubResource( 16 )
 
 [node name="Help-panel" type="CanvasLayer" parent="."]
