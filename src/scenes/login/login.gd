@@ -20,3 +20,5 @@ func _on_TextureButton_pressed():
 	
 
 
+func _on_LinkButton_button_up():
+	get_tree().change_scene("res://src/scenes/register/register.tscn")
