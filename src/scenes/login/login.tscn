@@ -30,17 +30,17 @@ margin_bottom = 326.0
 secret = true
 
 [node name="Label" type="Label" parent="."]
-margin_left = 377.0
+margin_left = 371.0
 margin_top = 162.0
-margin_right = 428.0
+margin_right = 422.0
 margin_bottom = 178.0
 rect_pivot_offset = Vector2( 37, 17 )
 text = "Usuario"
 
 [node name="Label2" type="Label" parent="."]
-margin_left = 376.0
+margin_left = 370.0
 margin_top = 248.0
-margin_right = 427.0
+margin_right = 441.0
 margin_bottom = 264.0
 rect_pivot_offset = Vector2( 37, 17 )
 text = "Contraseña"
@@ -54,6 +54,15 @@ texture_normal = ExtResource( 2 )
 expand = true
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="alerta" type="Label" parent="."]
+visible = false
+margin_left = 372.0
+margin_top = 337.0
+margin_right = 610.0
+margin_bottom = 351.0
+custom_colors/font_color = Color( 1, 0.301961, 0.301961, 1 )
+text = "Usuario o contraseña incorrectos."
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_TextureButton_pressed"]

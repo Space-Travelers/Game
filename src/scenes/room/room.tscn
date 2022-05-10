@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/UI/backgrounds/Select-avatar.png" type="Texture" id=1]
-[ext_resource path="res://assets/UI/elements/Rectangle 1.png" type="Texture" id=2]
 [ext_resource path="res://assets/UI/astronauts/room_medecine.png" type="Texture" id=3]
 [ext_resource path="res://assets/UI/buttons/button-right.svg" type="Texture" id=4]
 [ext_resource path="res://assets/UI/buttons/button_room.png" type="Texture" id=5]
@@ -12,10 +11,10 @@
 script = ExtResource( 8 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 264, 208 )
+position = Vector2( 485, 71 )
 scale = Vector2( 0.676587, 0.612016 )
 texture = ExtResource( 1 )
-offset = Vector2( 368.762, 149.506 )
+offset = Vector2( 42.1226, 373.356 )
 
 [node name="astronauta" type="Sprite" parent="."]
 position = Vector2( 521, 399 )
@@ -44,37 +43,33 @@ margin_bottom = 572.0
 texture_normal = ExtResource( 5 )
 expand = true
 
-[node name="stat" type="TextureButton" parent="."]
+[node name="ProgressBar" type="ProgressBar" parent="."]
 margin_left = 259.0
-margin_top = 25.0
-margin_right = 357.0
-margin_bottom = 117.0
-texture_normal = ExtResource( 2 )
-expand = true
+margin_top = 50.0
+margin_right = 365.0
+margin_bottom = 129.0
+rect_pivot_offset = Vector2( -617, 29 )
 
-[node name="stat2" type="TextureButton" parent="."]
-margin_left = 637.0
-margin_top = 27.0
-margin_right = 735.0
-margin_bottom = 119.0
-texture_normal = ExtResource( 2 )
-expand = true
+[node name="ProgressBar2" type="ProgressBar" parent="."]
+margin_left = 385.0
+margin_top = 50.0
+margin_right = 491.0
+margin_bottom = 129.0
+rect_pivot_offset = Vector2( -617, 29 )
 
-[node name="stat3" type="TextureButton" parent="."]
-margin_left = 505.0
-margin_top = 25.0
-margin_right = 603.0
-margin_bottom = 117.0
-texture_normal = ExtResource( 2 )
-expand = true
+[node name="ProgressBar3" type="ProgressBar" parent="."]
+margin_left = 507.0
+margin_top = 50.0
+margin_right = 613.0
+margin_bottom = 129.0
+rect_pivot_offset = Vector2( -617, 29 )
 
-[node name="stat4" type="TextureButton" parent="."]
-margin_left = 380.0
-margin_top = 25.0
-margin_right = 478.0
-margin_bottom = 117.0
-texture_normal = ExtResource( 2 )
-expand = true
+[node name="ProgressBar4" type="ProgressBar" parent="."]
+margin_left = 639.0
+margin_top = 51.0
+margin_right = 745.0
+margin_bottom = 130.0
+rect_pivot_offset = Vector2( -617, 29 )
 
 [connection signal="button_up" from="buttonRight" to="." method="_on_buttonRight_button_up"]
 [connection signal="button_up" from="buttonLeft" to="." method="_on_buttonLeft_button_up"]

@@ -4,8 +4,10 @@ func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 	print(body.get_string_from_utf8())
 	if result == HTTPRequest.RESULT_SUCCESS:
 		if(response_code==200):
-			print(body.get_string_from_utf8())
+			if(body.get_string_from_utf8() == '["Player not logged"]'):
+				$alerta.show()	
 		else:
+			
 			print("errot")
 	
 
