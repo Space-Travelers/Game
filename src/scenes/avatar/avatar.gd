@@ -7,13 +7,15 @@ var avatars = {
 	"avatar3": "res://assets/UI/astronauts/avatar3.svg",
 }
 
+var health1=70
 var current_avatar_index;
 var avatar;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	current_avatar_index = 1;
-
+	$health.value=health1
+	
 func change_img_avatar(file):
 	var node = $avatar/astronauta
 

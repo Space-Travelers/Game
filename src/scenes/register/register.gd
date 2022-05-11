@@ -4,12 +4,10 @@ onready var drop_menu_down = $genero
 
 var current_avatar_index;
 
-
 var genero = "M"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-
 	current_avatar_index = 1;
 	add_items()
 
@@ -20,6 +18,7 @@ func add_items():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
 
 func _on_next_pressed():
 	print("IM PRESSED")
@@ -52,6 +51,8 @@ func _on_genero_item_selected(index):
 
 
 
+
+
 var avatars = {
 	"avatar1" : "res://assets/UI/astronauts/avatar1.svg",
 	"avatar2" :  "res://assets/UI/astronauts/avatar2.svg",
@@ -68,6 +69,32 @@ func change_img_avatar(file):
 	node.texture = load(file)
 
 func _on_Button_pressed():
+
+	$avatar.show()
+
+
+
+
+
+
+
+func _on_register_pressed():
+	var headers = ["Content-Type: application/json"]
+	var body = {"name": $username.get_text(),
+  "last_name": $apellido.get_text(),
+  "email": $email.get_text(),
+  "password": $password.get_text(),
+  "age": 0,
+  "level": $nivel.get_text(),
+  "gender": $genero.get_text(),
+  "school": $Escuela.get_text(),
+  "avatar":str(current_avatar_index),
+ }
+	body = JSON.print(body)
+	var error = $HTTPRequest.request("https://spacetravelers.herokuapp.com/player/register",headers, true, HTTPClient.METHOD_POST, body)
+	if error != OK:
+		print("Error")
+
 	print("where am i")
 		
 func _on_register_pressed():
@@ -96,12 +123,3 @@ func _on_buttonLeft_pressed():
 	if (current_avatar_index<1):
 		current_avatar_index = 3;
 	change_img_avatar(avatars["avatar"+String(current_avatar_index)])
-	
-
-	
-	
-
-
-	
-
-
