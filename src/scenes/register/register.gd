@@ -20,6 +20,25 @@ func add_items():
 #	pass
 
 
+func _on_next_pressed():
+	print("IM PRESSED")
+	var headers = ["Content-Type: application/json"]
+	var body = {"name": $username.get_text(),
+  "last_name": $apellido.get_text(),
+  "email": $email.get_text(),
+  "password": $password.get_text(),
+  "age": int($edad.get_text()),
+  "level": $nivel.get_text(),
+  "gender": $genero.get_text(),
+  "school": $Escuela.get_text(),
+  "avatar":str(current_avatar_index),
+ }
+	body = JSON.print(body)
+	var error = $HTTPRequest.request("https://spacetravelers.herokuapp.com/player/register",headers, true, HTTPClient.METHOD_POST, body)
+	if error != OK:
+		print("Error")
+	$avatar.show()
+	
 func _on_genero_item_selected(index):
 	var current_select=index		
 	if current_select == 0:
@@ -28,6 +47,9 @@ func _on_genero_item_selected(index):
 		genero="F"
 	print(genero)
 	
+
+
+
 
 
 
@@ -47,6 +69,7 @@ func change_img_avatar(file):
 	node.texture = load(file)
 
 func _on_Button_pressed():
+
 	$avatar.show()
 
 
@@ -71,6 +94,12 @@ func _on_register_pressed():
 	var error = $HTTPRequest.request("https://spacetravelers.herokuapp.com/player/register",headers, true, HTTPClient.METHOD_POST, body)
 	if error != OK:
 		print("Error")
+
+	print("where am i")
+		
+func _on_register_pressed():
+	$avatar.hide()
+	get_tree().change_scene("res://src/scenes/login/login.tscn")
 
 
 func _on_HTTPRequest_request_completed(result, response_code, headers, body):

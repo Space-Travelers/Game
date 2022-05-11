@@ -146,6 +146,9 @@ rect_pivot_offset = Vector2( 46, 22 )
 text = "Escuela"
 
 [node name="Button" type="Button" parent="."]
+
+[node name="next" type="Button" parent="."]
+
 margin_left = 395.0
 margin_top = 457.0
 margin_right = 613.0
@@ -156,6 +159,7 @@ text = "Siguiente"
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 
 [node name="avatar" type="Control" parent="."]
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 
@@ -208,8 +212,13 @@ margin_bottom = 574.0
 texture_normal = ExtResource( 10 )
 expand = true
 
+
 [connection signal="item_selected" from="genero" to="." method="_on_genero_item_selected"]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[connection signal="item_selected" from="genero" to="." method="_on_genero_item_selected"]
+[connection signal="pressed" from="next" to="." method="_on_next_pressed"]
 [connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
 [connection signal="pressed" from="avatar/buttonRight" to="." method="_on_buttonRight_pressed"]
 [connection signal="pressed" from="avatar/buttonLeft" to="." method="_on_buttonLeft_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://assets/UI/immune_system/room/blood2.png" type="Texture" id=1]
 [ext_resource path="res://assets/UI/immune_system/room/tall-wall.png" type="Texture" id=2]
@@ -16,6 +16,22 @@
 [ext_resource path="res://src/scenes/immune_system/base_game/HealthScore.gd" type="Script" id=14]
 [ext_resource path="res://src/scenes/immune_system/base_game/Virus.tscn" type="PackedScene" id=15]
 [ext_resource path="res://src/scenes/immune_system/base_game/Button.gd" type="Script" id=16]
+[ext_resource path="res://assets/sounds/background_sounds/immune_system.mp3" type="AudioStream" id=17]
+[ext_resource path="res://font.tres" type="DynamicFont" id=18]
+[ext_resource path="res://src/scenes/immune_system/base_game/dialogs/DialogUI.tscn" type="PackedScene" id=19]
+[ext_resource path="res://assets/UI/immune_system/room/dialog-box.png" type="Texture" id=20]
+[ext_resource path="res://assets/UI/elements/close.png" type="Texture" id=21]
+[ext_resource path="res://assets/UI/elements/help.png" type="Texture" id=22]
+[ext_resource path="res://assets/UI/elements/space_bar.png" type="Texture" id=23]
+[ext_resource path="res://assets/UI/elements/space_bar01.png" type="Texture" id=24]
+[ext_resource path="res://src/scenes/immune_system/base_game/Start_space.gd" type="Script" id=25]
+[ext_resource path="res://assets/UI/immune_system/room/level-cont.png" type="Texture" id=26]
+[ext_resource path="res://src/scenes/immune_system/base_game/Level-lb.gd" type="Script" id=27]
+[ext_resource path="res://assets/UI/immune_system/lymphocyte/lymphocyte-battle.png" type="Texture" id=28]
+[ext_resource path="res://assets/UI/immune_system/cell/blood-cell.png" type="Texture" id=29]
+[ext_resource path="res://src/scenes/immune_system/base_game/closebtn.gd" type="Script" id=30]
+[ext_resource path="res://src/scenes/immune_system/base_game/Help-panel.gd" type="Script" id=31]
+[ext_resource path="res://assets/UI/buttons/restart.png" type="Texture" id=32]
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 347.002, 134.95 )
@@ -46,12 +62,58 @@ extents = Vector2( 243, 36 )
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 126.481, 100.577 )
 
+[sub_resource type="DynamicFontData" id=25]
+font_path = "res://assets/ttf/rimouski sb.otf"
+
+[sub_resource type="DynamicFont" id=21]
+size = 100
+outline_size = 1
+outline_color = Color( 0.290196, 0.0509804, 0.270588, 1 )
+use_filter = true
+font_data = SubResource( 25 )
+
 [sub_resource type="DynamicFont" id=2]
 size = 27
 font_data = ExtResource( 13 )
 
-[sub_resource type="RectangleShape2D" id=14]
-extents = Vector2( 107, 10 )
+[sub_resource type="StyleBoxFlat" id=17]
+bg_color = Color( 0.137255, 0.12549, 0.12549, 0.360784 )
+
+[sub_resource type="DynamicFont" id=18]
+size = 70
+font_data = ExtResource( 13 )
+
+[sub_resource type="SpriteFrames" id=20]
+animations = [ {
+"frames": [ ExtResource( 24 ), ExtResource( 23 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=19]
+extents = Vector2( 42.75, 28 )
+
+[sub_resource type="RectangleShape2D" id=16]
+extents = Vector2( 44.75, 59.75 )
+
+[sub_resource type="StyleBoxFlat" id=24]
+bg_color = Color( 0.0784314, 0.0745098, 0.0745098, 0.658824 )
+
+[sub_resource type="StyleBoxFlat" id=22]
+bg_color = Color( 0.713726, 0.478431, 0.968627, 0.529412 )
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="DynamicFont" id=23]
+size = 40
+font_data = ExtResource( 13 )
 
 [node name="RoomOne" type="Node2D"]
 script = ExtResource( 12 )
@@ -93,7 +155,7 @@ position = Vector2( 0.00463867, 0.000854492 )
 shape = SubResource( 4 )
 
 [node name="Virus" parent="game_items" instance=ExtResource( 15 )]
-position = Vector2( 2461, 398 )
+position = Vector2( 2461, 408 )
 scale = Vector2( 0.395149, 0.388287 )
 
 [node name="Tall-wall4" type="Sprite" parent="game_items"]
@@ -114,7 +176,7 @@ rotation = 3.14159
 scale = Vector2( 0.0826342, -0.0829205 )
 
 [node name="blood-cell4" parent="game_items" instance=ExtResource( 9 )]
-position = Vector2( 953, 403 )
+position = Vector2( 1221, 514 )
 rotation = 3.14159
 scale = Vector2( 0.0826342, -0.0829205 )
 
@@ -328,17 +390,25 @@ offset = Vector2( -228.141, -0.000244141 )
 position = Vector2( -223.389, 0.000244141 )
 shape = SubResource( 8 )
 
-[node name="Button" type="TextureButton" parent="."]
-margin_left = 2492.0
-margin_top = 488.0
-margin_right = 2702.0
-margin_bottom = 700.0
-rect_scale = Vector2( 0.503514, 0.472945 )
-texture_normal = ExtResource( 11 )
-script = ExtResource( 16 )
-nextScene = "res://src/scenes/immune_system/minigames/definitions/Main.tscn"
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer"]
+margin_top = 12.0
+margin_right = 1256.0
+margin_bottom = 506.0
+rect_scale = Vector2( 0.13289, 0.132345 )
+texture = ExtResource( 26 )
+
+[node name="Label" type="Label" parent="CanvasLayer/TextureRect2"]
+margin_left = 497.0
+margin_top = 144.0
+margin_right = 640.0
+margin_bottom = 273.0
+rect_scale = Vector2( 2.20951, 1.95931 )
+custom_colors/font_color = Color( 0.290196, 0.0509804, 0.270588, 1 )
+custom_fonts/font = SubResource( 21 )
+text = "0"
+script = ExtResource( 27 )
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
 margin_left = 866.0
@@ -358,18 +428,179 @@ custom_fonts/font = SubResource( 2 )
 text = "0"
 script = ExtResource( 14 )
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="help" type="TextureButton" parent="CanvasLayer"]
+margin_left = -0.999939
+margin_top = 511.0
+margin_right = 149.0
+margin_bottom = 661.0
+rect_scale = Vector2( 0.580859, 0.595155 )
+texture_normal = ExtResource( 22 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 384, 588 )
-shape = SubResource( 14 )
+[node name="Start" type="Area2D" parent="CanvasLayer"]
+script = ExtResource( 25 )
 
+[node name="start-space" type="Panel" parent="CanvasLayer/Start"]
+visible = false
+margin_right = 40.0
+margin_bottom = 42.0
+rect_scale = Vector2( 25.7584, 14.5895 )
+custom_styles/panel = SubResource( 17 )
+
+[node name="Label" type="Label" parent="CanvasLayer/Start/start-space"]
+margin_left = 4.58104
+margin_top = 19.6032
+margin_right = 1063.58
+margin_bottom = 122.603
+rect_scale = Vector2( 0.0285344, 0.057835 )
+custom_fonts/font = SubResource( 18 )
+text = "Presiona espacio para empezar"
+autowrap = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="CanvasLayer/Start/start-space"]
+position = Vector2( 18.0522, 29.062 )
+scale = Vector2( 0.0120489, 0.0186345 )
+frames = SubResource( 20 )
+speed_scale = 0.5
+playing = true
+
+[node name="DialogBox" parent="CanvasLayer/Start" instance=ExtResource( 19 )]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/Start"]
+position = Vector2( 44.25, 387 )
+shape = SubResource( 19 )
+
+[node name="Button" type="TextureButton" parent="."]
+visible = false
+margin_left = 2400.0
+margin_top = 474.0
+margin_right = 2610.0
+margin_bottom = 686.0
+rect_scale = Vector2( 0.614114, 0.57683 )
+texture_normal = ExtResource( 11 )
+script = ExtResource( 16 )
+nextScene = "res://src/scenes/immune_system/minigames/definitions/Main.tscn"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 17 )
+pitch_scale = 0.5
+autoplay = true
+attenuation = 1.10957
+
+[node name="Panel" type="NinePatchRect" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 1755.0
+margin_top = 24.0
+margin_right = 1803.0
+margin_bottom = 44.0
+rect_scale = Vector2( 12.5832, 7.00485 )
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+margin_right = 740.0
+margin_bottom = 283.0
+rect_scale = Vector2( 0.0655576, 0.0720165 )
+texture = ExtResource( 20 )
+
+[node name="Label" type="Label" parent="Panel"]
+margin_left = 1.98682
+margin_top = 4.28275
+margin_right = 108.987
+margin_bottom = 72.2827
+rect_scale = Vector2( 0.0578403, 0.0959942 )
+custom_colors/font_color = Color( 0.905882, 0.905882, 0.905882, 1 )
+custom_fonts/font = ExtResource( 18 )
+text = "hola"
+
+[node name="TextureButton" type="TextureButton" parent="Panel"]
+margin_left = 44.9014
+margin_top = 2.14137
+margin_right = 184.901
+margin_bottom = 142.141
+rect_scale = Vector2( 0.0196769, 0.0288381 )
+texture_normal = ExtResource( 21 )
+
+[node name="restart" type="TextureButton" parent="."]
+visible = false
+anchor_left = 2.531
+anchor_top = 0.92
+anchor_right = 2.531
+anchor_bottom = 0.92
+margin_left = 2503.0
+margin_top = 500.0
+margin_right = 2713.0
+margin_bottom = 712.0
+rect_scale = Vector2( 0.413932, 0.413932 )
+texture_normal = ExtResource( 32 )
+
+[node name="lost_challenge_area2" type="Area2D" parent="."]
+position = Vector2( 2143, 485 )
+
+[node name="lost_challenge_obj" type="CollisionShape2D" parent="lost_challenge_area2"]
+position = Vector2( -6, -9 )
+shape = SubResource( 16 )
+
+[node name="Help-panel" type="CanvasLayer" parent="."]
+pause_mode = 2
+script = ExtResource( 31 )
+
+[node name="bg" type="Panel" parent="Help-panel"]
+visible = false
+margin_right = 1027.0
+margin_bottom = 609.0
+custom_styles/panel = SubResource( 24 )
+
+[node name="Ayuda" type="Panel" parent="Help-panel"]
+visible = false
+margin_left = 112.0
+margin_top = 63.0
+margin_right = 886.0
+margin_bottom = 541.0
+custom_styles/panel = SubResource( 22 )
+
+[node name="Label" type="Label" parent="Help-panel/Ayuda"]
+margin_left = 53.0
+margin_top = 55.0
+margin_right = 720.0
+margin_bottom = 327.0
+custom_colors/font_color = Color( 0.921569, 0.937255, 0.94902, 1 )
+custom_fonts/font = SubResource( 23 )
+text = "1. Recolecta glóbulos rojos para mejorar la salud de tu avatar
+
+2. Desafía virus para fortalecer a tu sistema inmune"
+autowrap = true
+
+[node name="Sprite" type="Sprite" parent="Help-panel/Ayuda"]
+position = Vector2( 665, 157 )
+scale = Vector2( 0.200602, 0.200602 )
+texture = ExtResource( 29 )
+
+[node name="Sprite2" type="Sprite" parent="Help-panel/Ayuda"]
+position = Vector2( 496, 352 )
+scale = Vector2( 0.187366, 0.187366 )
+texture = ExtResource( 28 )
+
+[node name="close" type="TextureButton" parent="Help-panel"]
+visible = false
+margin_left = 820.0
+margin_top = 83.0
+margin_right = 960.0
+margin_bottom = 223.0
+rect_scale = Vector2( 0.288225, 0.288225 )
+texture_normal = ExtResource( 21 )
+script = ExtResource( 30 )
+
+[connection signal="area_entered" from="game_items/Virus" to="game_items/Lymphocyte" method="_on_Virus_area_entered"]
+[connection signal="area_entered" from="game_items/Virus" to="game_items/Lymphocyte" method="_on_lost_challenge_area_entered"]
 [connection signal="coin_collected" from="game_items/blood-cell" to="." method="_on_bloodcell_coin_collected"]
-[connection signal="coin_collected" from="game_items/blood-cell" to="." method="_on_Node2D_coin_collected"]
+[connection signal="coin_collected" from="game_items/blood-cell" to="CanvasLayer/Label" method="_on_bloodcell_coin_collected"]
 [connection signal="coin_collected" from="game_items/blood-cell4" to="." method="_on_bloodcell_coin_collected"]
-[connection signal="coin_collected" from="game_items/blood-cell4" to="." method="_on_Node2D_coin_collected"]
 [connection signal="coin_collected" from="game_items/blood-cell2" to="." method="_on_bloodcell_coin_collected"]
-[connection signal="coin_collected" from="game_items/blood-cell2" to="." method="_on_Node2D_coin_collected"]
 [connection signal="coin_collected" from="game_items/blood-cell3" to="." method="_on_bloodcell_coin_collected"]
-[connection signal="coin_collected" from="game_items/blood-cell3" to="." method="_on_Node2D_coin_collected"]
+[connection signal="pressed" from="CanvasLayer/help" to="Help-panel" method="_on_help_pressed"]
 [connection signal="button_up" from="Button" to="Button" method="_on_Button_button_up"]
+[connection signal="pressed" from="Panel/TextureButton" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="restart" to="." method="_on_restart_pressed"]
+[connection signal="area_entered" from="lost_challenge_area2" to="." method="_on_lost_challenge_area2_area_entered"]
+[connection signal="area_entered" from="lost_challenge_area2" to="game_items/Lymphocyte" method="_on_lost_challenge_area2_area_entered"]
+[connection signal="pressed" from="Help-panel/close" to="Help-panel" method="_on_close_pressed"]
