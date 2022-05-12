@@ -23,6 +23,7 @@ func _on_TextureButton_pressed():
 		push_error("un error ocurrió con el request")
 	else:
 		PlayerInfo.user_name = $username.get_text().split("@")[0]
+		PlayerInfo.email =  $username.get_text()
 		
 
 	

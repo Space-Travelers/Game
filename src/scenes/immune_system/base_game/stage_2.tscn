@@ -1,6 +1,7 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://assets/UI/immune_system/room/md-purple.png" type="Texture" id=1]
+[ext_resource path="res://src/scenes/immune_system/base_game/exit_game/exit_button.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/UI/immune_system/room/level-cont.png" type="Texture" id=3]
 [ext_resource path="res://src/scenes/immune_system/base_game/Lymphocyte.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/scenes/immune_system/base_game/Level-lb.gd" type="Script" id=5]
@@ -365,6 +366,8 @@ stream = ExtResource( 17 )
 pitch_scale = 0.5
 autoplay = true
 attenuation = 1.10957
+
+[node name="Quit" parent="." instance=ExtResource( 2 )]
 
 [node name="lost_challenge_area2" type="Area2D" parent="."]
 position = Vector2( 2143, 485 )

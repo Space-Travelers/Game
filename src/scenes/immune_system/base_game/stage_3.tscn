@@ -1,9 +1,10 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://assets/UI/immune_system/room/level-cont.png" type="Texture" id=1]
 [ext_resource path="res://assets/UI/immune_system/room/tall-blue.png" type="Texture" id=2]
 [ext_resource path="res://src/scenes/immune_system/base_game/Level-lb.gd" type="Script" id=3]
 [ext_resource path="res://src/scenes/immune_system/base_game/Lymphocyte.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/scenes/immune_system/base_game/exit_game/exit_button.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/UI/immune_system/room/red-cell-container.png" type="Texture" id=6]
 [ext_resource path="res://assets/UI/immune_system/room/sm-blue.png" type="Texture" id=7]
 [ext_resource path="res://assets/UI/immune_system/room/wall-3.png" type="Texture" id=8]
@@ -349,6 +350,8 @@ texture = ExtResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
 position = Vector2( 1712.25, 638 )
 shape = SubResource( 21 )
+
+[node name="Quit" parent="." instance=ExtResource( 5 )]
 
 [connection signal="area_entered" from="game_items/Virus" to="." method="_on_Virus_area_entered"]
 [connection signal="coin_collected" from="game_items/blood-cell" to="." method="_on_bloodcell_coin_collected"]
