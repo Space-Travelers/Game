@@ -10,12 +10,10 @@
 [ext_resource path="res://assets/UI/immune_system/room/wall-3.png" type="Texture" id=8]
 [ext_resource path="res://src/scenes/immune_system/base_game/blood-cell.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/UI/immune_system/room/game.png" type="Texture" id=10]
-[ext_resource path="res://assets/UI/buttons/swords_game.png" type="Texture" id=11]
 [ext_resource path="res://src/scenes/immune_system/base_game/Game.gd" type="Script" id=12]
 [ext_resource path="res://assets/ttf/SpaceGrotesk-SemiBold.ttf" type="DynamicFontData" id=13]
 [ext_resource path="res://src/scenes/immune_system/base_game/HealthScore.gd" type="Script" id=14]
 [ext_resource path="res://src/scenes/immune_system/base_game/Virus.tscn" type="PackedScene" id=15]
-[ext_resource path="res://src/scenes/immune_system/base_game/Button.gd" type="Script" id=16]
 [ext_resource path="res://assets/sounds/background_sounds/immune_system.mp3" type="AudioStream" id=17]
 [ext_resource path="res://font.tres" type="DynamicFont" id=18]
 [ext_resource path="res://src/scenes/immune_system/base_game/dialogs/DialogUI.tscn" type="PackedScene" id=19]
@@ -33,12 +31,6 @@
 [ext_resource path="res://src/scenes/immune_system/base_game/Help-panel.gd" type="Script" id=31]
 [ext_resource path="res://assets/UI/buttons/restart.png" type="Texture" id=32]
 
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 347.002, 134.95 )
-
-[sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 365.977, 607.195 )
-
 [sub_resource type="RectangleShape2D" id=12]
 extents = Vector2( 154, 5 )
 
@@ -46,7 +38,10 @@ extents = Vector2( 154, 5 )
 extents = Vector2( 850.379, 580.602 )
 
 [sub_resource type="RectangleShape2D" id=15]
-extents = Vector2( 212.5, 35.5 )
+extents = Vector2( 210.562, 34.5 )
+
+[sub_resource type="RectangleShape2D" id=26]
+extents = Vector2( 370.25, 25 )
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -59,8 +54,17 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 243, 36 )
 
+[sub_resource type="RectangleShape2D" id=27]
+extents = Vector2( 318.972, 101.033 )
+
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 126.481, 100.577 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 365.977, 607.195 )
+
+[sub_resource type="RectangleShape2D" id=28]
+extents = Vector2( 891.777, 312.426 )
 
 [sub_resource type="DynamicFontData" id=25]
 font_path = "res://assets/ttf/rimouski sb.otf"
@@ -117,6 +121,7 @@ font_data = ExtResource( 13 )
 
 [node name="RoomOne" type="Node2D"]
 script = ExtResource( 12 )
+nextScene = "res://src/scenes/immune_system/minigames/definitions/Main.tscn"
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -132,44 +137,6 @@ offset = Vector2( -1344.55, -603.154 )
 
 [node name="game_items" type="Node2D" parent="."]
 
-[node name="Wall-3" type="Sprite" parent="game_items"]
-position = Vector2( 696.999, 165 )
-scale = Vector2( 0.291065, 0.288996 )
-texture = ExtResource( 8 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="game_items/Wall-3"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="game_items/Wall-3/StaticBody2D"]
-position = Vector2( 0.00463867, 0.000854492 )
-shape = SubResource( 4 )
-
-[node name="Wall-3" type="Sprite" parent="game_items/Wall-3"]
-position = Vector2( 3061.13, 1065.25 )
-scale = Vector2( 0.725152, 1.09152 )
-texture = ExtResource( 8 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="game_items/Wall-3/Wall-3"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="game_items/Wall-3/Wall-3/StaticBody2D"]
-position = Vector2( 0.00463867, 0.000854492 )
-shape = SubResource( 4 )
-
-[node name="Virus" parent="game_items" instance=ExtResource( 15 )]
-position = Vector2( 2461, 408 )
-scale = Vector2( 0.395149, 0.388287 )
-
-[node name="Tall-wall4" type="Sprite" parent="game_items"]
-position = Vector2( 1878, 470 )
-scale = Vector2( 0.210396, 0.225628 )
-texture = ExtResource( 2 )
-offset = Vector2( -228.141, -0.000244141 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="game_items/Tall-wall4"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="game_items/Tall-wall4/StaticBody2D"]
-position = Vector2( -223.389, 4.43188 )
-shape = SubResource( 8 )
-
 [node name="blood-cell" parent="game_items" instance=ExtResource( 9 )]
 position = Vector2( 465, 223 )
 rotation = 3.14159
@@ -177,6 +144,11 @@ scale = Vector2( 0.0826342, -0.0829205 )
 
 [node name="blood-cell4" parent="game_items" instance=ExtResource( 9 )]
 position = Vector2( 1221, 514 )
+rotation = 3.14159
+scale = Vector2( 0.0826342, -0.0829205 )
+
+[node name="blood-cell5" parent="game_items" instance=ExtResource( 9 )]
+position = Vector2( 1717, 421 )
 rotation = 3.14159
 scale = Vector2( 0.0826342, -0.0829205 )
 
@@ -225,8 +197,8 @@ shape = SubResource( 6 )
 [node name="Node" type="Node2D" parent="game_items"]
 
 [node name="Sprite5" type="Sprite" parent="game_items/Node"]
-position = Vector2( 1091, -121 )
-scale = Vector2( 0.227559, 0.308333 )
+position = Vector2( 1087.57, -121 )
+scale = Vector2( 0.23622, 0.308333 )
 texture = ExtResource( 8 )
 offset = Vector2( 78.0015, 2224.87 )
 
@@ -245,7 +217,7 @@ offset = Vector2( 78.0015, 2224.87 )
 [node name="StaticBody2D" type="StaticBody2D" parent="game_items/Node"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="game_items/Node/StaticBody2D"]
-position = Vector2( 1240.5, 566.5 )
+position = Vector2( 1239, 564 )
 shape = SubResource( 15 )
 
 [node name="Node2" type="Node2D" parent="game_items"]
@@ -264,70 +236,31 @@ texture = ExtResource( 8 )
 offset = Vector2( 78.0015, 2224.87 )
 
 [node name="Sprite7" type="Sprite" parent="game_items/Node2"]
-position = Vector2( 1363, -121 )
+position = Vector2( 1474, 565 )
 scale = Vector2( 0.227559, 0.308333 )
 texture = ExtResource( 8 )
-offset = Vector2( 78.0015, 2224.87 )
+offset = Vector2( -409.785, 0.00292969 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="game_items/Node2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="game_items/Node2/StaticBody2D"]
-position = Vector2( 1240.5, 566.5 )
-shape = SubResource( 15 )
+[node name="Sprite8" type="Sprite" parent="game_items/Node2"]
+position = Vector2( 1671.48, 565 )
+scale = Vector2( 0.308661, 0.308333 )
+texture = ExtResource( 8 )
+offset = Vector2( -409.785, 0.00292969 )
 
 [node name="Node3" type="Node2D" parent="game_items"]
 position = Vector2( 976, 0 )
 
 [node name="Sprite5" type="Sprite" parent="game_items/Node3"]
-position = Vector2( 1091, -121 )
-scale = Vector2( 0.227559, 0.308333 )
-texture = ExtResource( 8 )
-offset = Vector2( 78.0015, 2224.87 )
-
-[node name="Sprite6" type="Sprite" parent="game_items/Node3"]
-position = Vector2( 1227, -121 )
-scale = Vector2( 0.227559, 0.308333 )
-texture = ExtResource( 8 )
-offset = Vector2( 78.0015, 2224.87 )
-
-[node name="Sprite7" type="Sprite" parent="game_items/Node3"]
-position = Vector2( 1363, -121 )
-scale = Vector2( 0.227559, 0.308333 )
+position = Vector2( 1070.1, -121 )
+scale = Vector2( 0.284364, 0.308333 )
 texture = ExtResource( 8 )
 offset = Vector2( 78.0015, 2224.87 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="game_items/Node3"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="game_items/Node3/StaticBody2D"]
-position = Vector2( 1240.5, 566.5 )
-shape = SubResource( 15 )
-
-[node name="Node3" type="Node2D" parent="game_items/Node3"]
-position = Vector2( 216, 0 )
-
-[node name="Sprite5" type="Sprite" parent="game_items/Node3/Node3"]
-position = Vector2( 1091, -121 )
-scale = Vector2( 0.227559, 0.308333 )
-texture = ExtResource( 8 )
-offset = Vector2( 78.0015, 2224.87 )
-
-[node name="Sprite6" type="Sprite" parent="game_items/Node3/Node3"]
-position = Vector2( 1227, -121 )
-scale = Vector2( 0.227559, 0.308333 )
-texture = ExtResource( 8 )
-offset = Vector2( 78.0015, 2224.87 )
-
-[node name="Sprite7" type="Sprite" parent="game_items/Node3/Node3"]
-position = Vector2( 1363, -121 )
-scale = Vector2( 0.227559, 0.308333 )
-texture = ExtResource( 8 )
-offset = Vector2( 78.0015, 2224.87 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="game_items/Node3/Node3"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="game_items/Node3/Node3/StaticBody2D"]
-position = Vector2( 1240.5, 566.5 )
-shape = SubResource( 15 )
+position = Vector2( 1374, 555 )
+shape = SubResource( 26 )
 
 [node name="blood-flow" type="Node2D" parent="game_items"]
 
@@ -335,7 +268,7 @@ shape = SubResource( 15 )
 position = Vector2( 149.5, 552.932 )
 scale = Vector2( 0.442693, 0.416349 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 speed_scale = 1.5
 playing = true
 
@@ -344,7 +277,7 @@ playing = true
 [node name="StaticBody2D" type="StaticBody2D" parent="game_items/Wall"]
 
 [node name="Sprite" type="Sprite" parent="game_items/Wall/StaticBody2D"]
-position = Vector2( 483.75, 565 )
+position = Vector2( 483, 565 )
 scale = Vector2( 0.227559, 0.308333 )
 texture = ExtResource( 8 )
 
@@ -364,8 +297,20 @@ scale = Vector2( 0.227559, 0.308333 )
 texture = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="game_items/Wall/StaticBody2D"]
-position = Vector2( 657, 567 )
+position = Vector2( 656, 566 )
 shape = SubResource( 11 )
+
+[node name="md-wall" type="Sprite" parent="game_items"]
+position = Vector2( 696, 171 )
+scale = Vector2( 0.251969, 0.304357 )
+texture = ExtResource( 8 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="game_items/md-wall"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="game_items/md-wall/StaticBody2D"]
+position = Vector2( 1.47217, 7.39264 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 27 )
 
 [node name="Wall-sm" type="Sprite" parent="game_items"]
 position = Vector2( 470.999, 275 )
@@ -375,7 +320,7 @@ texture = ExtResource( 7 )
 [node name="StaticBody2D" type="StaticBody2D" parent="game_items/Wall-sm"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="game_items/Wall-sm/StaticBody2D"]
-position = Vector2( -2.52612, 10.8738 )
+position = Vector2( -10.116, 5.43658 )
 shape = SubResource( 5 )
 
 [node name="Tall-wall3" type="Sprite" parent="game_items"]
@@ -389,6 +334,33 @@ offset = Vector2( -228.141, -0.000244141 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="game_items/Tall-wall3/StaticBody2D"]
 position = Vector2( -223.389, 0.000244141 )
 shape = SubResource( 8 )
+
+[node name="Node2D" type="Node2D" parent="game_items"]
+
+[node name="Sprite" type="Sprite" parent="game_items/Node2D"]
+position = Vector2( 1610, 605 )
+scale = Vector2( 0.186986, 0.275265 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3" type="Sprite" parent="game_items/Node2D"]
+position = Vector2( 1810, 605 )
+scale = Vector2( 0.186986, 0.275265 )
+texture = ExtResource( 2 )
+
+[node name="Sprite2" type="Sprite" parent="game_items/Node2D"]
+position = Vector2( 1733, 605 )
+scale = Vector2( 0.186986, 0.275265 )
+texture = ExtResource( 2 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="game_items/Node2D/Sprite2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="game_items/Node2D/Sprite2/StaticBody2D"]
+position = Vector2( -121.666, -283.363 )
+shape = SubResource( 28 )
+
+[node name="Virus" parent="." instance=ExtResource( 15 )]
+position = Vector2( 2461, 402 )
+scale = Vector2( 0.395149, 0.388287 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -460,6 +432,7 @@ autowrap = true
 position = Vector2( 18.0522, 29.062 )
 scale = Vector2( 0.0120489, 0.0186345 )
 frames = SubResource( 20 )
+frame = 1
 speed_scale = 0.5
 playing = true
 
@@ -468,17 +441,6 @@ playing = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/Start"]
 position = Vector2( 44.25, 387 )
 shape = SubResource( 19 )
-
-[node name="Button" type="TextureButton" parent="."]
-visible = false
-margin_left = 2400.0
-margin_top = 474.0
-margin_right = 2610.0
-margin_bottom = 686.0
-rect_scale = Vector2( 0.614114, 0.57683 )
-texture_normal = ExtResource( 11 )
-script = ExtResource( 16 )
-nextScene = "res://src/scenes/immune_system/minigames/definitions/Main.tscn"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 17 )
@@ -537,7 +499,7 @@ texture_normal = ExtResource( 32 )
 position = Vector2( 2143, 485 )
 
 [node name="lost_challenge_obj" type="CollisionShape2D" parent="lost_challenge_area2"]
-position = Vector2( -6, -9 )
+position = Vector2( 1, -16 )
 shape = SubResource( 16 )
 
 [node name="Help-panel" type="CanvasLayer" parent="."]
@@ -590,15 +552,14 @@ rect_scale = Vector2( 0.288225, 0.288225 )
 texture_normal = ExtResource( 21 )
 script = ExtResource( 30 )
 
-[connection signal="area_entered" from="game_items/Virus" to="game_items/Lymphocyte" method="_on_Virus_area_entered"]
-[connection signal="area_entered" from="game_items/Virus" to="game_items/Lymphocyte" method="_on_lost_challenge_area_entered"]
 [connection signal="coin_collected" from="game_items/blood-cell" to="." method="_on_bloodcell_coin_collected"]
 [connection signal="coin_collected" from="game_items/blood-cell" to="CanvasLayer/Label" method="_on_bloodcell_coin_collected"]
 [connection signal="coin_collected" from="game_items/blood-cell4" to="." method="_on_bloodcell_coin_collected"]
+[connection signal="coin_collected" from="game_items/blood-cell5" to="." method="_on_bloodcell_coin_collected"]
 [connection signal="coin_collected" from="game_items/blood-cell2" to="." method="_on_bloodcell_coin_collected"]
 [connection signal="coin_collected" from="game_items/blood-cell3" to="." method="_on_bloodcell_coin_collected"]
+[connection signal="area_entered" from="Virus" to="." method="_on_Virus_area_entered"]
 [connection signal="pressed" from="CanvasLayer/help" to="Help-panel" method="_on_help_pressed"]
-[connection signal="button_up" from="Button" to="Button" method="_on_Button_button_up"]
 [connection signal="pressed" from="Panel/TextureButton" to="." method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="restart" to="." method="_on_restart_pressed"]
 [connection signal="area_entered" from="lost_challenge_area2" to="." method="_on_lost_challenge_area2_area_entered"]

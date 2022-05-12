@@ -6,6 +6,7 @@ enum QuestionType { TEXT, IMAGE, VIDEO, AUDIO }
 export(Resource) var bd_quiz
 export(Color) var color_right
 export(Color) var color_wrong
+export var nextScene: String = ""
 var buttons := []
 var index := 0
 var correct := 0
@@ -27,6 +28,7 @@ func _on_request_completed(result, response_code, headers, body):
 func _ready() -> void:
 	$HTTPRequest.connect("request_completed", self, "_on_request_completed")
 	$HTTPRequest.request("https://spacetravelers.herokuapp.com/minigames/quiz")
+	
 	
 func load_quiz() -> void:
 	if index >= data.size():
@@ -71,8 +73,17 @@ func randomize_array(array: Array) -> Array:
 func game_over() -> void:
 	$game_over.show()
 	$game_over/txt_result.text = str(correct, "/", data.size())
+	if correct == 4: 
+		$game_over/button_restart.text = "siguiente"
+
+		
 
 func _on_button_restart_pressed():
-	get_tree().reload_current_scene()
+	if correct == 4:
+		get_tree().change_scene(nextScene)
+	elif Global.coins>0:
+		get_tree().reload_current_scene()
+	
+	
 
 

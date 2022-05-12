@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://assets/UI/immune_system/lymphocyte/happy-lymphocyte.png" type="Texture" id=1]
 [ext_resource path="res://assets/UI/immune_system/lymphocyte/lymphocyte.png" type="Texture" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://assets/UI/immune_system/lymphocyte/scan3.png" type="Texture" id=13]
 [ext_resource path="res://assets/UI/immune_system/lymphocyte/scan1.png" type="Texture" id=14]
 [ext_resource path="res://assets/UI/immune_system/lymphocyte/left-01.png" type="Texture" id=15]
+[ext_resource path="res://assets/UI/immune_system/lymphocyte/happy.png" type="Texture" id=16]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -28,24 +29,29 @@ animations = [ {
 "name": "scan",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 10 ), ExtResource( 7 ) ],
+"frames": [ ExtResource( 15 ), ExtResource( 9 ) ],
 "loop": true,
-"name": "run_right",
-"speed": 2.0
+"name": "run_left",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 2 ), ExtResource( 1 ), ExtResource( 2 ) ],
 "loop": true,
 "name": "jump",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 15 ), ExtResource( 9 ) ],
-"loop": true,
-"name": "run_left",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 3 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 8 ) ],
 "loop": false,
 "name": "Loser",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "run_right",
+"speed": 2.0
+}, {
+"frames": [ ExtResource( 16 ) ],
+"loop": true,
+"name": "wining",
 "speed": 5.0
 } ]
 

@@ -106,11 +106,14 @@ func _on_Checkbtn_pressed():
 		validateAnswers()
 		if(correct==3):
 			game_state = "win"
-			$AcceptDialog.dialog_text = "Cool! Tienes todas las respuestas correctas"
+			$AcceptDialog.dialog_text = "Monedas: %0d\nCool! Tienes todas las respuestas correctas"
 			$AcceptDialog.popup()
 		else:
 			game_state = "lose"
-			$AcceptDialog.dialog_text = "Oh no! te has equivocado en "+String(incorrect)
+			if Global.coins > 0:
+				$AcceptDialog.dialog_text = "Monedas: "+str(Global.coins)+"\nOh no! te has equivocado en "+String(incorrect)+"\nVuelve a intentar!"
+			else:
+							$AcceptDialog.dialog_text = "Monedas: %0d\nOh, no! Te has quedado sin monedas, recolecta más para volver a intentar" % Global.coins
 			$AcceptDialog.popup()			
 	else:
 		game_state = "not_finished"
@@ -124,19 +127,19 @@ func game_finished():
 		Global.scan = false
 		get_tree().change_scene("res://src/scenes/immune_system/base_game/stage_2.tscn")
 	elif(game_state=="lose"):
+		Global.scan = false
+		Global.lost_challenge = true
 		if (Global.coins - 1 > -1):
 				Global.coins = Global.coins - 1
+				get_tree().reload_current_scene()
 		elif Global.coins == 0:
 			print("oops 0 monedas")
 			Global.reset_player = true
-		Global.scan = false
-		Global.lost_challenge = true
-		get_tree().change_scene("res://src/scenes/immune_system/base_game/stage_1.tscn")
+			get_tree().change_scene("res://src/scenes/immune_system/base_game/stage_1.tscn")
 		print(Global.coins);
 	else:
 		$AcceptDialog.hide()
 		
-
 
 func _on_AcceptDialog_confirmed():
 	game_finished()

@@ -167,6 +167,7 @@ popup_exclusive = true
 window_title = "Resultados"
 resizable = true
 dialog_hide_on_ok = false
+dialog_autowrap = true
 
 [node name="Check-btn" type="TextureButton" parent="."]
 margin_left = 862.0
