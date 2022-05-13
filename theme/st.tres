@@ -77,7 +77,7 @@ use_mipmaps = true
 font_data = SubResource( 11 )
 
 [sub_resource type="StyleBoxFlat" id=13]
-bg_color = Color( 0.235294, 0.396078, 0.317647, 1 )
+bg_color = Color( 0.184314, 0.184314, 0.184314, 1 )
 corner_radius_top_left = 15
 corner_radius_top_right = 15
 corner_radius_bottom_right = 15

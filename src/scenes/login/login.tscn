@@ -55,7 +55,6 @@ expand = true
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 
-
 [node name="alerta" type="Label" parent="."]
 visible = false
 margin_left = 372.0
@@ -81,9 +80,7 @@ margin_bottom = 452.0
 text = "Registrate"
 underline = 1
 
-
 [connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
-[connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_TextureButton_pressed"]
 [connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
 [connection signal="request_completed" from="HTTPRequest" to="TextureButton" method="_on_HTTPRequest_request_completed"]
 [connection signal="button_up" from="LinkButton" to="." method="_on_LinkButton_button_up"]
