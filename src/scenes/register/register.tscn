@@ -11,7 +11,7 @@
 [ext_resource path="res://assets/UI/astronauts/avatar1.svg" type="Texture" id=9]
 [ext_resource path="res://assets/UI/buttons/check.png" type="Texture" id=10]
 
-[node name="Control" type="Control"]
+[node name="Control2" type="Control"]
 margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 3 )

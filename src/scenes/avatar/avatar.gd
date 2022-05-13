@@ -15,6 +15,7 @@ var avatar;
 func _ready():
 	current_avatar_index = 1;
 	fetchPlayerStats()
+	$astronauta/name.text = PlayerInfo.user_name
 	
 	
 	
@@ -53,7 +54,6 @@ func fetchPlayerStats():
 
 func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 	if result == HTTPRequest.RESULT_SUCCESS:
-			print(result)
 			if(response_code==200):
 				print(body.get_string_from_utf8())
 				var json = JSON.parse(body.get_string_from_utf8())

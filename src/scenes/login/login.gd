@@ -9,6 +9,7 @@ func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 				$alerta.show()	
 			else:
 				get_tree().change_scene("res://src/scenes/room/room.tscn")
+				
 		else:
 			print("errot")
 	
@@ -19,7 +20,9 @@ func _on_TextureButton_pressed():
 	body = JSON.print(body)
 	var error = $HTTPRequest.request("https://spacetravelers.herokuapp.com/player/login",headers, true, HTTPClient.METHOD_POST, body)
 	if error != OK:
-		push_error(" un error ocurrió con el request")
+		push_error("un error ocurrió con el request")
+	else:
+		PlayerInfo.user_name = $username.get_text().split("@")[0]
 		
 
 	
