@@ -433,6 +433,7 @@ autowrap = true
 position = Vector2( 18.0522, 29.062 )
 scale = Vector2( 0.0120489, 0.0186345 )
 frames = SubResource( 20 )
+frame = 1
 speed_scale = 0.5
 playing = true
 
