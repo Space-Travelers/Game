@@ -68,16 +68,6 @@ func change_img_avatar(file):
 	var node = $avatar/astronauta
 	node.texture = load(file)
 
-func _on_Button_pressed():
-
-	$avatar.show()
-
-
-
-
-
-
-
 func _on_register_pressed():
 	var headers = ["Content-Type: application/json"]
 	var body = {"name": $username.get_text(),
@@ -94,10 +84,13 @@ func _on_register_pressed():
 	var error = $HTTPRequest.request("https://spacetravelers.herokuapp.com/player/register",headers, true, HTTPClient.METHOD_POST, body)
 	if error != OK:
 		print("Error")
+	else:
+		$avatar.hide()
+		get_tree().change_scene("res://src/scenes/login/login.tscn")
 
 	print("where am i")
 		
-func _on_register_pressed():
+func _on_registration_pressed():
 	$avatar.hide()
 	get_tree().change_scene("res://src/scenes/login/login.tscn")
 

@@ -23,17 +23,14 @@ func _ready():
 			
 	
 func _physics_process(delta):
-	if Input.is_action_pressed("ui_right") and not Global.scan and not Global.tutorial:
-		Global.rest = false
+	if Input.is_action_pressed("ui_right"):
 		animation.play("run_right")
 		velocity.x = SPEED
-	elif Global.scan:
+	elif Global.scan and Global.scan_area:
 		animation.play("scan")
-	elif Input.is_action_pressed("ui_left") and not Global.scan and not Global.tutorial:
-		Global.rest = false
+	elif Input.is_action_pressed("ui_left"):
 		animation.play("run_left")
 		velocity.x = -SPEED
-		
 	else:
 		velocity.x = 0
 	if Input.is_action_pressed("ui_up") && jump_count < extra_jump:
@@ -53,9 +50,7 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity, FLOOR)
 
 func _on_Virus_area_entered(area):
-	Global.reset_player = false
-	Global.visible_button = true
-	Global.scan = true 	
+	
 
 	pass # Replace with function body. 
 	

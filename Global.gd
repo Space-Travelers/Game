@@ -8,11 +8,13 @@ var stage = 1
 var visible_button = false
 var tutorial = true
 var scan = false
+var scan_area = false
 var rest = true
 var dialog_zone = "tutorial"
 var reset_player = false
 var level = 1
 
+var user_name = "aaa";
 
 var playerx=49
 var playery=353

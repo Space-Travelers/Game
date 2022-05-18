@@ -11,7 +11,7 @@
 [ext_resource path="res://assets/UI/astronauts/avatar1.svg" type="Texture" id=9]
 [ext_resource path="res://assets/UI/buttons/check.png" type="Texture" id=10]
 
-[node name="Control" type="Control"]
+[node name="Control2" type="Control"]
 margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 3 )
@@ -145,10 +145,7 @@ margin_bottom = 375.0
 rect_pivot_offset = Vector2( 46, 22 )
 text = "Escuela"
 
-[node name="Button" type="Button" parent="."]
-
 [node name="next" type="Button" parent="."]
-
 margin_left = 395.0
 margin_top = 457.0
 margin_right = 613.0
@@ -212,9 +209,6 @@ margin_bottom = 574.0
 texture_normal = ExtResource( 10 )
 expand = true
 
-
-[connection signal="item_selected" from="genero" to="." method="_on_genero_item_selected"]
-[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 
 [connection signal="item_selected" from="genero" to="." method="_on_genero_item_selected"]

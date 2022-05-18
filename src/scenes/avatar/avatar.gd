@@ -7,14 +7,17 @@ var avatars = {
 	"avatar3": "res://assets/UI/astronauts/avatar3.svg",
 }
 
-var health1=70
+
 var current_avatar_index;
 var avatar;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	current_avatar_index = 1;
-	$health.value=health1
+	fetchPlayerStats()
+	$astronauta/name.text = PlayerInfo.user_name
+	
+	
 	
 func change_img_avatar(file):
 	var node = $avatar/astronauta
@@ -41,3 +44,27 @@ func _on_buttonLeft_button_up():
 func _on_sala_pressed():
 	get_tree().change_scene("res://src/scenes/immune_system/base_game/stage_1.tscn")
 	 # Replace with function body.
+
+func fetchPlayerStats():
+	var email_player = $"/root/PlayerInfo".email.replace("@", "%40");
+	$HTTPRequest.request("https://spacetravelers.herokuapp.com/player/stats?email="+email_player)
+	
+	pass
+	
+
+func _on_HTTPRequest_request_completed(result, response_code, headers, body):
+	if result == HTTPRequest.RESULT_SUCCESS:
+			if(response_code==200):
+				print(body.get_string_from_utf8())
+				var json = JSON.parse(body.get_string_from_utf8())
+				var data = json.result
+				_change_stats(data)
+				print(data)
+			else:
+				print("erro prueba")
+				
+func _change_stats(data):
+	$health.value = data.avatar_health
+	$food.value = data.avatar_nutrition
+	$weight.value = data.avatar_physical_condition
+	$happy.value = data.avatar_happiness

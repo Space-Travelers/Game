@@ -79,8 +79,10 @@ func _on_AcceptDialog_confirmed():
 
 func game_finished():
 	if(game_state=="win"):
+		print("wiii")
 		pass
 	elif (game_state=="lose"):
+		get_tree().reload_current_scene()
 		pass
 	else:
 		$AcceptDialog.hide()

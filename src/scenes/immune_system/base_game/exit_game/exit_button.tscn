@@ -1,0 +1,117 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://src/scenes/immune_system/base_game/exit_game/exit.gd" type="Script" id=1]
+[ext_resource path="res://assets/UI/elements/close.png" type="Texture" id=2]
+[ext_resource path="res://theme/st.tres" type="Theme" id=3]
+[ext_resource path="res://font.tres" type="DynamicFont" id=4]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 0.423529 )
+
+[sub_resource type="Theme" id=2]
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.0745098, 0.372549, 0.380392, 0.611765 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.596078, 0.215686, 0.215686, 1 )
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.431373, 0.160784, 0.160784, 1 )
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.776471, 0.282353, 0.282353, 1 )
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="Quit" type="CanvasLayer"]
+script = ExtResource( 1 )
+
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_left = 976.0
+margin_top = 4.0
+margin_right = 1116.0
+margin_bottom = 144.0
+rect_scale = Vector2( 0.302412, 0.302803 )
+texture_normal = ExtResource( 2 )
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+margin_right = 1023.0
+margin_bottom = 599.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Popup" type="Popup" parent="Panel"]
+visible = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -294.0
+margin_top = -186.0
+margin_right = 294.0
+margin_bottom = 186.0
+theme = SubResource( 2 )
+
+[node name="Panel" type="Panel" parent="Panel/Popup"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -317.0
+margin_top = -193.0
+margin_right = 338.0
+margin_bottom = 200.0
+custom_styles/panel = SubResource( 3 )
+
+[node name="Label" type="Label" parent="Panel/Popup/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -191.0
+margin_top = -109.5
+margin_right = 175.0
+margin_bottom = 43.5
+custom_fonts/font = ExtResource( 4 )
+text = "Si deseas salir, presiona en continuar.
+Recuerda que se perderá todo tu progreso"
+align = 1
+autowrap = true
+
+[node name="Cancelar" type="Button" parent="Panel/Popup/Panel"]
+margin_left = 331.5
+margin_top = 271.5
+margin_right = 440.5
+margin_bottom = 318.5
+custom_colors/font_color_disabled = Color( 0.964706, 0.92549, 0.92549, 1 )
+custom_colors/font_color_focus = Color( 0.964706, 0.92549, 0.92549, 1 )
+custom_colors/font_color = Color( 0.964706, 0.92549, 0.92549, 1 )
+custom_colors/font_color_hover = Color( 0.964706, 0.92549, 0.92549, 1 )
+custom_colors/font_color_pressed = Color( 0.964706, 0.92549, 0.92549, 1 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/normal = SubResource( 6 )
+text = "Cancelar"
+
+[node name="Ok" type="Button" parent="Panel/Popup/Panel"]
+margin_left = 181.5
+margin_top = 268.5
+margin_right = 290.5
+margin_bottom = 315.5
+theme = ExtResource( 3 )
+text = "Continuar"
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="Panel/Popup/Panel/Cancelar" to="." method="_on_Cancelar_pressed"]
+[connection signal="pressed" from="Panel/Popup/Panel/Ok" to="." method="_on_Ok_pressed"]
