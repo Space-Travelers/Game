@@ -60,8 +60,8 @@ func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 				var data = json.result
 				_change_stats(data)
 				print(data)
-			else:
-				print("erro prueba")
+	else:
+		print("erro prueba")
 				
 func _change_stats(data):
 	$health.value = data.avatar_health

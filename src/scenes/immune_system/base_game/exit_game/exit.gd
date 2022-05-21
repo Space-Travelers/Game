@@ -19,16 +19,17 @@ func _ready():
 func _on_TextureButton_pressed():
 	$TextureButton.hide()
 	$Panel.show()
-	$Panel/Popup.popup()
+	$Panel/Panel.show()
 	pass # Replace with function body.
 
 
 func _on_Ok_pressed():
-	get_tree().change_scene("res://src/scenes/room/room.tscn")
+	$Panel.hide()
+	$TextureButton.show()
+	
 
 
 
 func _on_Cancelar_pressed():
-	$Panel.hide()
-	$TextureButton.show()
+	get_tree().change_scene("res://src/scenes/room/room.tscn")
 	pass # Replace with function body.

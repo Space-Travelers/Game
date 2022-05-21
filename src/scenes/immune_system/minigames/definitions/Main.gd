@@ -16,26 +16,9 @@ func _on_request_completed(result, response_code, headers, body):
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-#	$HTTPRequest.connect("request_completed", self, "_on_request_completed")
-#	$HTTPRequest.request("https://spacetravelers.herokuapp.com/minigames/definiciones")
-	definitions = [
-	{
-		'id':1,
-		'word': 'citoplasma',
-		'definition': 'Es la sustancia que ocupa el interior de la célula. Contiene diversas sustancias de reserva en disolución'
-	},
-	{
-		'id':2,
-		'word': 'Membrana Plasmatica',
-		'definition': 'Es fundamental, por que aloja sustancias que hacen posible el desarrollo de varias actividades'
-	},
-	{
-		'id':3,
-		'word': 'Cloroplasto',
-		'definition':'Se encuentran únicamente en las células vegetales. Están limitados por una doble membrana'
-	}
-]
-	set_information()
+	$HTTPRequest.connect("request_completed", self, "_on_request_completed")
+	$HTTPRequest.request("https://spacetravelers.herokuapp.com/minigames/definiciones")
+	
 	rest_nodes = get_tree().get_nodes_in_group("zone")
 	nodes_availables = getEndPointsTotal()	
 	for node in rest_nodes:
@@ -106,7 +89,7 @@ func _on_Checkbtn_pressed():
 		validateAnswers()
 		if(correct==3):
 			game_state = "win"
-			$AcceptDialog.dialog_text = "Monedas: %0d\nCool! Tienes todas las respuestas correctas"
+			$AcceptDialog.dialog_text = "Monedas: %0d\nCool! Tienes todas las respuestas correctas" % Global.coins
 			$AcceptDialog.popup()
 		else:
 			game_state = "lose"

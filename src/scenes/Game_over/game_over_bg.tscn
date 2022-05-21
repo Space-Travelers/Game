@@ -1,0 +1,85 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/UI/elements/planets.png" type="Texture" id=1]
+[ext_resource path="res://src/scenes/Game_over/bg_over.gd" type="Script" id=2]
+[ext_resource path="res://assets/UI/elements/bg.png" type="Texture" id=3]
+
+[node name="Node2D" type="Node2D"]
+__meta__ = {
+"_edit_horizontal_guides_": [ 612.0 ]
+}
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource( 2 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 0, 650 )
+
+[node name="Bg" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 505.344, 546 )
+rotation = -5.78811e-08
+scale = Vector2( 0.24024, 0.257444 )
+texture = ExtResource( 3 )
+
+[node name="Planets7" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 426, 95 )
+rotation = -0.243558
+scale = Vector2( 0.0534007, 0.0534007 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 941, 941 )
+
+[node name="Planets11" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 324, 514 )
+rotation = -0.243558
+scale = Vector2( 0.0534007, 0.0534007 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 941, 941 )
+
+[node name="Planets10" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 526, 333 )
+rotation = -0.243558
+scale = Vector2( 0.0265182, 0.0265182 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 941, 941 )
+
+[node name="Planets12" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 813.223, 186.911 )
+rotation = -0.243558
+scale = Vector2( 0.0471766, 0.0471766 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 941, 941 )
+
+[node name="Planets8" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 126, 277 )
+rotation = -0.243558
+scale = Vector2( 0.0802498, 0.0802498 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 941, 941 )
+
+[node name="Planets9" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 479.221, 244.383 )
+rotation = 0.875846
+scale = Vector2( 0.0403181, 0.0403181 )
+texture = ExtResource( 1 )
+offset = Vector2( 7979.69, -1889.93 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 941, 941 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 53, 47 )
+scale = Vector2( 0.0981671, 0.106669 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 1386, 941, 941 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 877, 464 )
+scale = Vector2( 0.287726, 0.287726 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 2772, 0, 941, 941 )

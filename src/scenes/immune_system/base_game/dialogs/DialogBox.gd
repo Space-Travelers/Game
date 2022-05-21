@@ -37,6 +37,7 @@ func next_line():
 		$Timer.start()
 		$NinePatchRect.visible = false
 		Global.tutorial = false
+		
 	print("len of dialog %0d" % len(dialogues_messages))
 	
 	if dialog_index<len(dialogues_messages):

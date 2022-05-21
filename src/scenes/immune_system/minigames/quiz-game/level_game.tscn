@@ -18,6 +18,7 @@ margin_top = -16.0
 margin_right = -364.4
 margin_bottom = 36.4
 script = ExtResource( 4 )
+parentScene = "res://src/scenes/immune_system/base_game/stage_2.tscn"
 bd_quiz = ExtResource( 5 )
 color_right = Color( 0.0470588, 0.588235, 0.247059, 1 )
 color_wrong = Color( 0.490196, 0.121569, 0.121569, 1 )

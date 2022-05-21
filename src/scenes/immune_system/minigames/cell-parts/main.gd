@@ -80,9 +80,21 @@ func _on_AcceptDialog_confirmed():
 func game_finished():
 	if(game_state=="win"):
 		print("wiii")
+		Global.scan = false
+		Global.lost_challenge = false
+		get_tree().change_scene("res://src/scenes/Game_over/game_over.tscn")
 		pass
 	elif (game_state=="lose"):
-		get_tree().reload_current_scene()
-		pass
+		Global.scan = false
+		Global.lost_challenge = true
+		if (Global.coins - 1 > -1):
+				Global.coins = Global.coins - 1
+				get_tree().reload_current_scene()
+		elif Global.coins == 0:
+			print("oops 0 monedas")
+			Global.reset_player = true
+			get_tree().change_scene("res://src/scenes/immune_system/base_game/stage_3.tscn")
+		print(Global.coins);
 	else:
 		$AcceptDialog.hide()
+	

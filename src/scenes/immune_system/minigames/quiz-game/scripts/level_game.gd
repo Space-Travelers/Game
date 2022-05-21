@@ -1,6 +1,6 @@
 extends Node
 #warnings-disable
-
+export var parentScene = "";
 enum QuestionType { TEXT, IMAGE, VIDEO, AUDIO }
 
 export(Resource) var bd_quiz
@@ -80,9 +80,17 @@ func game_over() -> void:
 
 func _on_button_restart_pressed():
 	if correct == 4:
+		Global.lost_challenge = false
+		Global.scan = false
 		get_tree().change_scene(nextScene)
-	elif Global.coins>0:
+	elif (Global.coins - 1 > -1):
+		Global.coins = Global.coins - 1
 		get_tree().reload_current_scene()
+	elif Global.coins == 0:
+		print("oops 0 monedas")
+		Global.reset_player = true
+		get_tree().change_scene(parentScene)
+		print(Global.coins);
 	
 	
 
