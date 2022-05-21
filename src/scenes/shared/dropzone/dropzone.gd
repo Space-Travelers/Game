@@ -13,6 +13,7 @@ func _draw():
 	if(startPoint):
 		var container = get_node("Rectangle-dropZone")
 		remove_child(container)
+	
 		
 func set_id(id):
 	id_definition = id
