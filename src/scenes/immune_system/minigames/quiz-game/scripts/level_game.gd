@@ -31,12 +31,12 @@ func _ready() -> void:
 	
 	
 func load_quiz() -> void:
+	data = randomize_array(data)
 	if index >= data.size():
 		game_over()
 		return
 	question_texts.text = str(data[index].question)
 	var options = randomize_array(data[index].options)
-	print(options)	
 	for i in buttons.size():
 		buttons[i].text = str(options[i])
 		buttons[i].connect("pressed", self, "buttons_answer", [buttons[i]])

@@ -279,7 +279,6 @@ shape = SubResource( 26 )
 position = Vector2( 149.5, 552.932 )
 scale = Vector2( 0.442693, 0.416349 )
 frames = SubResource( 1 )
-frame = 1
 speed_scale = 1.5
 playing = true
 
@@ -444,6 +443,7 @@ autowrap = true
 position = Vector2( 18.0522, 29.062 )
 scale = Vector2( 0.0120489, 0.0186345 )
 frames = SubResource( 20 )
+frame = 1
 speed_scale = 0.5
 playing = true
 
@@ -590,6 +590,7 @@ shape = SubResource( 31 )
 [connection signal="coin_collected" from="game_items/blood-cell2" to="." method="_on_bloodcell_coin_collected"]
 [connection signal="coin_collected" from="game_items/blood-cell3" to="." method="_on_bloodcell_coin_collected"]
 [connection signal="area_entered" from="Virus" to="." method="_on_Virus_area_entered"]
+[connection signal="area_exited" from="Virus" to="." method="_on_Virus_area_exited"]
 [connection signal="pressed" from="CanvasLayer/help" to="Help-panel" method="_on_help_pressed"]
 [connection signal="pressed" from="Panel/TextureButton" to="." method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="restart" to="." method="_on_restart_pressed"]
