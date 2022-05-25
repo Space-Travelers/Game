@@ -18,7 +18,7 @@ func _ready():
 
 func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 	if result == HTTPRequest.RESULT_SUCCESS:
-		if(response_code==500):
+		if(response_code==200):
 			get_tree().change_scene("res://src/scenes/room/room.tscn")	
 		else:
 			print("error fffff")
