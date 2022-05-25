@@ -32,7 +32,7 @@ func select():
 	
 func deselect():
 	if(startPoint):
-		color = Color.blue
+		color = Color.transparent
 		
 	else:
 		modulate = Color.white

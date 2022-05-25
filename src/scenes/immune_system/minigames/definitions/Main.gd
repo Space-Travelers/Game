@@ -89,14 +89,16 @@ func _on_Checkbtn_pressed():
 		validateAnswers()
 		if(correct==3):
 			game_state = "win"
-			$AcceptDialog.dialog_text = "Monedas: %0d\nCool! Tienes todas las respuestas correctas" % Global.coins
+			$AcceptDialog.dialog_text = "Cool! Tienes todas las respuestas correctas\nGlóbulos rojos: %0d" % Global.coins
 			$AcceptDialog.popup()
 		else:
 			game_state = "lose"
+			
 			if Global.coins > 0:
-				$AcceptDialog.dialog_text = "Monedas: "+str(Global.coins)+"\nOh no! te has equivocado en "+String(incorrect)+"\nVuelve a intentar!"
+				Global.coins = Global.coins - 1
+				$AcceptDialog.dialog_text = "Oh no! te has equivocado en"+String(incorrect)+"\nHas perdido un glóbulo rojo\nTe quedan:"+str(Global.coins)+"\nVuelve a intentar!"
 			else:
-							$AcceptDialog.dialog_text = "Monedas: %0d\nOh, no! Te has quedado sin monedas, recolecta más para volver a intentar" % Global.coins
+				$AcceptDialog.dialog_text = "Oh, no! Te has quedado sin glóbulos rojos, recolecta más para volver a intentar"
 			$AcceptDialog.popup()			
 	else:
 		game_state = "not_finished"
@@ -112,8 +114,7 @@ func game_finished():
 	elif(game_state=="lose"):
 		Global.scan = false
 		Global.lost_challenge = true
-		if (Global.coins - 1 > -1):
-				Global.coins = Global.coins - 1
+		if (Global.coins > 0):
 				get_tree().reload_current_scene()
 		elif Global.coins == 0:
 			print("oops 0 monedas")

@@ -93,7 +93,7 @@ parts_game = true
 position = Vector2( 869, 345 )
 scale = Vector2( 0.75, 0.75 )
 index = 3
-word = "capsula"
+word = "cápsula"
 id_definition = 4
 parts_game = true
 

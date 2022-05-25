@@ -1,7 +1,9 @@
 extends Node2D
 export var nextScene: String = ""
+export var currentLevel: int = 0
 
 func _ready():
+	Global.level = currentLevel
 	pass
 	
 	
@@ -36,4 +38,9 @@ func _on_Virus_area_entered(area):
 		$restart.show()
 		
 		
+	pass # Replace with function body.
+
+
+func _on_fallen_zone_area_entered(area):
+	$game_items/Lymphocyte.reset_lymp()
 	pass # Replace with function body.

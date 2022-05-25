@@ -1,15 +1,21 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://src/scenes/immune_system/base_game/exit_game/exit.gd" type="Script" id=1]
 [ext_resource path="res://assets/UI/elements/close.png" type="Texture" id=2]
 [ext_resource path="res://theme/st.tres" type="Theme" id=3]
 [ext_resource path="res://font.tres" type="DynamicFont" id=4]
+[ext_resource path="res://src/shader/blur.shader" type="Shader" id=5]
+[ext_resource path="res://assets/UI/shader/white.png" type="Texture" id=6]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 0.423529 )
 
+[sub_resource type="ShaderMaterial" id=8]
+shader = ExtResource( 5 )
+shader_param/amount = null
+
 [sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 0.47451, 0.337255, 0.52549, 0.611765 )
+bg_color = Color( 0.368627, 0.294118, 0.447059, 0.72549 )
 border_width_left = 15
 border_width_top = 15
 border_width_right = 15
@@ -58,6 +64,13 @@ margin_bottom = 599.0
 input_pass_on_modal_close_click = false
 custom_styles/panel = SubResource( 1 )
 
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+material = SubResource( 8 )
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 6 )
+expand = true
+
 [node name="Panel" type="Panel" parent="Panel"]
 anchor_left = 0.5
 anchor_top = 0.5
@@ -75,20 +88,37 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -191.0
-margin_top = -109.5
+margin_top = -133.5
 margin_right = 175.0
-margin_bottom = 43.5
+margin_bottom = 58.5
+rect_pivot_offset = Vector2( 191, 96.5 )
 custom_fonts/font = ExtResource( 4 )
-text = "Si deseas salir, presiona en continuar.
-Recuerda que se perderá todo tu progreso"
+text = "Estás seguro que quieres salir?
+Tu progreso será guardado en esta sesión  pero no se sumarán puntos de salud"
+align = 1
+autowrap = true
+
+[node name="Label2" type="Label" parent="Panel/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -541.0
+margin_top = -289.0
+margin_right = -492.0
+margin_bottom = -250.0
+rect_rotation = -178.116
+rect_pivot_offset = Vector2( 191, 96.5 )
+custom_fonts/font = ExtResource( 4 )
+text = "?"
 align = 1
 autowrap = true
 
 [node name="Exit" type="Button" parent="Panel/Panel"]
 margin_left = 184.5
-margin_top = 268.5
+margin_top = 292.5
 margin_right = 293.5
-margin_bottom = 315.5
+margin_bottom = 339.5
 custom_colors/font_color_disabled = Color( 0.964706, 0.92549, 0.92549, 1 )
 custom_colors/font_color_focus = Color( 0.964706, 0.92549, 0.92549, 1 )
 custom_colors/font_color = Color( 0.964706, 0.92549, 0.92549, 1 )
@@ -101,9 +131,9 @@ text = "Salir"
 
 [node name="Back" type="Button" parent="Panel/Panel"]
 margin_left = 345.5
-margin_top = 268.5
+margin_top = 292.5
 margin_right = 454.5
-margin_bottom = 315.5
+margin_bottom = 339.5
 theme = ExtResource( 3 )
 text = "Regresar"
 

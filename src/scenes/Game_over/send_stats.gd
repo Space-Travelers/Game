@@ -1,5 +1,5 @@
 extends Button
-
+export var stastistic="health";
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -17,10 +17,24 @@ func _ready():
 
 
 func _on_HTTPRequest_request_completed(result, response_code, headers, body):
-	get_tree().change_scene("res://src/scenes/room/room.tscn")
+	if result == HTTPRequest.RESULT_SUCCESS:
+		if(response_code==500):
+			get_tree().change_scene("res://src/scenes/room/room.tscn")	
+		else:
+			print("error fffff")
+	pass
 
 
 func _on_Button_pressed():
+	Global.coins = 0
+	Global.level = 1
+	var headers = ["Content-Type: application/json"]
 	print(PlayerInfo.email)
-	
-	pass # Replace with function body.
+	var body = {
+  "email": PlayerInfo.email,
+  "statistic": stastistic,
+  "points": 20
+	}
+	body = JSON.print(body)
+	var error = $HTTPRequest.request("https://spacetravelers.herokuapp.com/player/statistics",headers, true, HTTPClient.METHOD_POST, body)
+	print("request completed")

@@ -16,6 +16,7 @@ func _ready():
 	current_avatar_index = 1;
 	fetchPlayerStats()
 	$astronauta/name.text = PlayerInfo.user_name
+	PlayerInfo.logged = true
 	
 	
 	
@@ -42,12 +43,17 @@ func _on_buttonLeft_button_up():
 
 
 func _on_sala_pressed():
-	get_tree().change_scene("res://src/scenes/immune_system/base_game/stage_1.tscn")
+	if Global.level == 1:
+		get_tree().change_scene("res://src/scenes/immune_system/base_game/stage_1.tscn")
+	elif Global.level == 2:
+		get_tree().change_scene("res://src/scenes/immune_system/base_game/stage_2.tscn")
+	elif Global.level == 3:
+		get_tree().change_scene("res://src/scenes/immune_system/base_game/stage_3.tscn")
 	 # Replace with function body.
 
 func fetchPlayerStats():
 	var email_player = $"/root/PlayerInfo".email.replace("@", "%40");
-	$HTTPRequest.request("https://spacetravelers.herokuapp.com/player/stats?email="+email_player)
+	$HTTPRequest.request("https://spacetravelers.herokuapp.com/player/statistics?email="+email_player)
 	
 	pass
 	
@@ -68,3 +74,11 @@ func _change_stats(data):
 	$food.value = data.avatar_nutrition
 	$weight.value = data.avatar_physical_condition
 	$happy.value = data.avatar_happiness
+
+
+func _on_exit_pressed():
+	PlayerInfo.logged = false
+	PlayerInfo.user_name=""
+	PlayerInfo.email = ""
+	get_tree().change_scene("res://src/scenes/login/login.tscn")
+	
