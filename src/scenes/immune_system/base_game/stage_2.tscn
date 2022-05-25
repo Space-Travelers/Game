@@ -1,5 +1,6 @@
 [gd_scene load_steps=47 format=2]
 
+
 [ext_resource path="res://assets/UI/immune_system/room/md-purple.png" type="Texture" id=1]
 [ext_resource path="res://src/scenes/immune_system/base_game/exit_game/exit_button.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/UI/immune_system/room/level-cont.png" type="Texture" id=3]
@@ -26,6 +27,7 @@
 [ext_resource path="res://src/scenes/immune_system/base_game/Help-panel.gd" type="Script" id=24]
 [ext_resource path="res://assets/UI/immune_system/cell/blood-cell.png" type="Texture" id=25]
 [ext_resource path="res://assets/UI/buttons/restart.png" type="Texture" id=26]
+
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 118.53, 103.808 )
@@ -505,6 +507,24 @@ rect_scale = Vector2( 0.413932, 0.413932 )
 texture_normal = ExtResource( 26 )
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="fallen_zone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fallen_zone"]
+position = Vector2( 1323, 649 )
+shape = SubResource( 31 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 1342, 0 )
+shape = SubResource( 32 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2( 4.5, 330.5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+shape = SubResource( 33 )
 
 [node name="fallen_zone" type="Area2D" parent="."]
 

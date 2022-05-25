@@ -31,3 +31,4 @@ func _notification(exit):
 		call_deferred("add_child", scene)
 		get_tree().set_auto_accept_quit(false)
 		#get_tree().quit() 
+
