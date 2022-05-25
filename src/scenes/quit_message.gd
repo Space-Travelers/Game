@@ -1,7 +1,6 @@
 extends CanvasLayer
 
 func _ready():
-	print("aaaaa")
 	if PlayerInfo.logged:
 		$Exit_no_logged.hide()
 		$logged.show()		

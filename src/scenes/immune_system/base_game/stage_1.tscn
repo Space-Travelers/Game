@@ -590,6 +590,7 @@ shape = SubResource( 31 )
 [connection signal="coin_collected" from="game_items/blood-cell2" to="." method="_on_bloodcell_coin_collected"]
 [connection signal="coin_collected" from="game_items/blood-cell3" to="." method="_on_bloodcell_coin_collected"]
 [connection signal="area_entered" from="Virus" to="." method="_on_Virus_area_entered"]
+[connection signal="area_exited" from="Virus" to="." method="_on_Virus_area_exited"]
 [connection signal="pressed" from="CanvasLayer/help" to="Help-panel" method="_on_help_pressed"]
 [connection signal="pressed" from="Panel/TextureButton" to="." method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="restart" to="." method="_on_restart_pressed"]

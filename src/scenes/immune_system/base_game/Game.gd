@@ -31,6 +31,8 @@ func _on_Virus_area_entered(area):
 	Global.scan_area = false
 	
 	if Global.coins>0:
+		$Panel.hide()
+		$restart.hide()
 		get_tree().change_scene(nextScene)
 	else:
 		$Panel/Label.text = "Oh no, no tienes glóbulos rojos para desafiar al virus! :("
@@ -43,4 +45,9 @@ func _on_Virus_area_entered(area):
 
 func _on_fallen_zone_area_entered(area):
 	$game_items/Lymphocyte.reset_lymp()
+
+
+func _on_Virus_area_exited(area):
+	$Panel.hide()
+	$restart.hide()
 	pass # Replace with function body.
