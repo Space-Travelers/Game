@@ -1,18 +1,14 @@
 extends Node2D
 export var nextScene: String = ""
+export var currentLevel: int = 0
 
 func _ready():
+	Global.level = currentLevel
 	pass
 	
 	
 func _on_bloodcell_coin_collected():
 	Global.coins +=1 
-
-
-
-
-func _on_lost_challenge_area2_area_entered(area):
-	pass
 
 
 func _on_TextureButton_pressed():
@@ -31,11 +27,20 @@ func _on_restart_pressed():
 func _on_Virus_area_entered(area):
 	print("virus area")
 	Global.reset_player = false
-	Global.scan = true 	
-	Global.scan_area = true
+	Global.scan = false 	
+	Global.scan_area = false
 	
 	if Global.coins>0:
 		get_tree().change_scene(nextScene)
 	else:
-		print("f")
+		$Panel/Label.text = "Oh no, no tienes glóbulos rojos para desafiar al virus! :("
+		$Panel.show()
+		$restart.show()
+		
+		
+	pass # Replace with function body.
+
+
+func _on_fallen_zone_area_entered(area):
+	$game_items/Lymphocyte.reset_lymp()
 	pass # Replace with function body.

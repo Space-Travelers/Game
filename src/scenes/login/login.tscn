@@ -8,6 +8,7 @@
 margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 3 )
+name_scene = "login"
 
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_right = 1023.0

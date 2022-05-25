@@ -22,3 +22,13 @@ var playery=353
 var posxplayer=49
 var posyplayer=353
 
+
+func _notification(exit):
+	print("hola xd")
+	var scene_quit =load("res://src/scenes/quit_message.tscn")
+	var scene=scene_quit.instance()
+	print_tree()
+	if exit == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
+		call_deferred("add_child", scene)
+		get_tree().set_auto_accept_quit(false)
+		#get_tree().quit() # default behavior

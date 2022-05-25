@@ -4,7 +4,8 @@ var user_health = 100
 var user_nutrition = 100
 var user_physical = 100
 var user_happiness = 100
-var email = ""
+var email = "con@fe.com"
+var logged = false
 
 # Declare member variables here. Examples:
 # var a = 2

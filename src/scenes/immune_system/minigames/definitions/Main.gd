@@ -16,26 +16,9 @@ func _on_request_completed(result, response_code, headers, body):
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-#	$HTTPRequest.connect("request_completed", self, "_on_request_completed")
-#	$HTTPRequest.request("https://spacetravelers.herokuapp.com/minigames/definiciones")
-	definitions = [
-	{
-		'id':1,
-		'word': 'citoplasma',
-		'definition': 'Es la sustancia que ocupa el interior de la célula. Contiene diversas sustancias de reserva en disolución'
-	},
-	{
-		'id':2,
-		'word': 'Membrana Plasmatica',
-		'definition': 'Es fundamental, por que aloja sustancias que hacen posible el desarrollo de varias actividades'
-	},
-	{
-		'id':3,
-		'word': 'Cloroplasto',
-		'definition':'Se encuentran únicamente en las células vegetales. Están limitados por una doble membrana'
-	}
-]
-	set_information()
+	$HTTPRequest.connect("request_completed", self, "_on_request_completed")
+	$HTTPRequest.request("https://spacetravelers.herokuapp.com/minigames/definiciones")
+	
 	rest_nodes = get_tree().get_nodes_in_group("zone")
 	nodes_availables = getEndPointsTotal()	
 	for node in rest_nodes:
@@ -106,14 +89,16 @@ func _on_Checkbtn_pressed():
 		validateAnswers()
 		if(correct==3):
 			game_state = "win"
-			$AcceptDialog.dialog_text = "Monedas: %0d\nCool! Tienes todas las respuestas correctas"
+			$AcceptDialog.dialog_text = "Cool! Tienes todas las respuestas correctas\nGlóbulos rojos: %0d" % Global.coins
 			$AcceptDialog.popup()
 		else:
 			game_state = "lose"
+			
 			if Global.coins > 0:
-				$AcceptDialog.dialog_text = "Monedas: "+str(Global.coins)+"\nOh no! te has equivocado en "+String(incorrect)+"\nVuelve a intentar!"
+				Global.coins = Global.coins - 1
+				$AcceptDialog.dialog_text = "Oh no! te has equivocado en"+String(incorrect)+"\nHas perdido un glóbulo rojo\nTe quedan:"+str(Global.coins)+"\nVuelve a intentar!"
 			else:
-							$AcceptDialog.dialog_text = "Monedas: %0d\nOh, no! Te has quedado sin monedas, recolecta más para volver a intentar" % Global.coins
+				$AcceptDialog.dialog_text = "Oh, no! Te has quedado sin glóbulos rojos, recolecta más para volver a intentar"
 			$AcceptDialog.popup()			
 	else:
 		game_state = "not_finished"
@@ -129,8 +114,7 @@ func game_finished():
 	elif(game_state=="lose"):
 		Global.scan = false
 		Global.lost_challenge = true
-		if (Global.coins - 1 > -1):
-				Global.coins = Global.coins - 1
+		if (Global.coins > 0):
 				get_tree().reload_current_scene()
 		elif Global.coins == 0:
 			print("oops 0 monedas")
