@@ -11,20 +11,17 @@ func _ready():
 	set_visible(false)
 	pass # Replace with function body.
 
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
+#when help is presssed, pause game
 func _on_help_pressed():
 	get_tree().paused = true
 	set_visible(get_tree().paused)
 
+#function stop pause
 func _on_close_pressed():
 	get_tree().paused = false
 	set_visible(false)
 
+#function for making the pause 
 func set_visible(is_visible):
 	for node in get_children():
 		node.visible = is_visible

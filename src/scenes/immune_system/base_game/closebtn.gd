@@ -8,6 +8,8 @@ extends TextureButton
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	mouse_default_cursor_shape = CURSOR_POINTING_HAND
+
 	pass # Replace with function body.
 
 

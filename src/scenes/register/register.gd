@@ -116,3 +116,8 @@ func _on_buttonLeft_pressed():
 	if (current_avatar_index<1):
 		current_avatar_index = 3;
 	change_img_avatar(avatars["avatar"+String(current_avatar_index)])
+
+
+func _on_back_pressed():
+	get_tree().change_scene("res://src/scenes/login/login.tscn")
+	pass # Replace with function body.

@@ -28,37 +28,37 @@ texture = ExtResource( 4 )
 position = Vector2( 905.576, 86.9592 )
 texture = ExtResource( 9 )
 
-[node name="Node2D7" parent="." instance=ExtResource( 1 )]
+[node name="Node2D7" parent="." groups=["space"] instance=ExtResource( 1 )]
 position = Vector2( 714, 270 )
 scale = Vector2( 0.75, 0.75 )
 startPoint = true
 id_definition = 1
 
-[node name="Node2D8" parent="." instance=ExtResource( 1 )]
+[node name="Node2D8" parent="." groups=["space"] instance=ExtResource( 1 )]
 position = Vector2( 868, 270 )
 scale = Vector2( 0.75, 0.75 )
 startPoint = true
 id_definition = 2
 
-[node name="Node2D12" parent="." instance=ExtResource( 1 )]
+[node name="Node2D12" parent="." groups=["space"] instance=ExtResource( 1 )]
 position = Vector2( 713, 346 )
 scale = Vector2( 0.75, 0.75 )
 startPoint = true
 id_definition = 3
 
-[node name="Node2D11" parent="." instance=ExtResource( 1 )]
+[node name="Node2D11" parent="." groups=["space"] instance=ExtResource( 1 )]
 position = Vector2( 869, 345 )
 scale = Vector2( 0.75, 0.75 )
 startPoint = true
 id_definition = 4
 
-[node name="Node2D10" parent="." instance=ExtResource( 1 )]
+[node name="Node2D10" parent="." groups=["space"] instance=ExtResource( 1 )]
 position = Vector2( 714, 422 )
 scale = Vector2( 0.75, 0.75 )
 startPoint = true
 id_definition = 5
 
-[node name="Node2D9" parent="." instance=ExtResource( 1 )]
+[node name="Node2D9" parent="." groups=["space"] instance=ExtResource( 1 )]
 position = Vector2( 869, 421 )
 scale = Vector2( 0.75, 0.75 )
 startPoint = true

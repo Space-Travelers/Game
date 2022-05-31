@@ -451,6 +451,9 @@ rect_scale = Vector2( 0.288225, 0.288225 )
 texture_normal = ExtResource( 21 )
 script = ExtResource( 19 )
 
+
+[node name="Panel" type="NinePatchRect" parent="."]
+
 [node name="Panel2" type="NinePatchRect" parent="."]
 
 visible = false
@@ -460,12 +463,16 @@ margin_right = 2090.0
 margin_bottom = 49.0
 rect_scale = Vector2( 12.5832, 7.00485 )
 
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+
 [node name="TextureRect" type="TextureRect" parent="Panel2"]
 
 margin_right = 740.0
 margin_bottom = 283.0
 rect_scale = Vector2( 0.0319752, 0.0560977 )
 texture = ExtResource( 20 )
+
+[node name="Label" type="Label" parent="Panel"]
 
 [node name="Label" type="Label" parent="Panel2"]
 
@@ -477,6 +484,9 @@ rect_scale = Vector2( 0.0578403, 0.0959942 )
 custom_colors/font_color = Color( 0.905882, 0.905882, 0.905882, 1 )
 custom_fonts/font = ExtResource( 18 )
 text = "hola"
+
+
+[node name="TextureButton" type="TextureButton" parent="Panel"]
 
 [node name="TextureButton" type="TextureButton" parent="Panel2"]
 

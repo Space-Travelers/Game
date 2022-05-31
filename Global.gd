@@ -32,3 +32,7 @@ func _notification(exit):
 		get_tree().set_auto_accept_quit(false)
 		#get_tree().quit() 
 
+func set_visible(is_visible):
+	for node in get_children():
+		node.visible = is_visible
+
