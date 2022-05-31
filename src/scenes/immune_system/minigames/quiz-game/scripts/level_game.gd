@@ -32,6 +32,7 @@ func _ready() -> void:
 	
 	
 func load_quiz() -> void:
+	data = randomize_array(data)
 	if index >= data.size():
 		game_over()
 		return
