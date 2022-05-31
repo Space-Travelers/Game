@@ -217,9 +217,18 @@ expand = true
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 
+[node name="back" type="TextureButton" parent="."]
+margin_left = 49.0
+margin_top = 30.0
+margin_right = 174.0
+margin_bottom = 179.0
+rect_scale = Vector2( 0.40887, 0.40887 )
+texture_normal = ExtResource( 4 )
+
 [connection signal="item_selected" from="genero" to="." method="_on_genero_item_selected"]
 [connection signal="pressed" from="next" to="." method="_on_next_pressed"]
 [connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
 [connection signal="pressed" from="avatar/buttonRight" to="." method="_on_buttonRight_pressed"]
 [connection signal="pressed" from="avatar/buttonLeft" to="." method="_on_buttonLeft_pressed"]
 [connection signal="pressed" from="avatar/register" to="." method="_on_register_pressed"]
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]

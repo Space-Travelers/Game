@@ -14,6 +14,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/scenes/immune_system/minigames/quiz-game/scripts/resource/bd_quiz.gd"
 }, {
+"base": "TextureButton",
+"class": "MyTbtn",
+"language": "GDScript",
+"path": "res://src/prebuilt-classes/mytexturebtn.gd"
+}, {
+"base": "Button",
+"class": "Mybtn",
+"language": "GDScript",
+"path": "res://src/prebuilt-classes/mybutton.gd"
+}, {
 "base": "Resource",
 "class": "QuizQuestion",
 "language": "GDScript",
@@ -21,6 +31,8 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "BDQuiz": "",
+"MyTbtn": "",
+"Mybtn": "",
 "QuizQuestion": ""
 }
 

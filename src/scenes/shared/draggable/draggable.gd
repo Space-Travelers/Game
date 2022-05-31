@@ -21,22 +21,20 @@ func _ready():
 		label.text = word
 		
 	
-	
-	
-
+#setting word for cell part ex: plasmido, etc
 func set_word(definiton_word:String):
 	word = definiton_word
 	var label = get_node("Label")
 	label.text = word
 			
 
-
+#function that will make the cell part follow the mouse
 func _on_Area2D_input_event(viewport, event, shape_idx):
 	if Input.is_action_just_pressed( "click"):
 		selected = true
 		Global.actual_id_definition = id_definition
 		
-		
+#this function is created for the cell part to follow the mouse 		
 func _physics_process(delta):
 	if selected:
 		global_position = lerp(global_position, get_global_mouse_position(), 25 * delta)
@@ -44,6 +42,7 @@ func _physics_process(delta):
 	else:
 		global_position = lerp(global_position, rest_point, 10 * delta)
 
+#cell part will be left where it is 
 func _input(event):
 	if event is InputEventMouseButton:
 		var actual_dropzone;

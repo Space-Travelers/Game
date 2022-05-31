@@ -6,6 +6,7 @@ var user_physical = 100
 var user_happiness = 100
 var email = "con@fe.com"
 var logged = false
+var logout = false
 
 # Declare member variables here. Examples:
 # var a = 2

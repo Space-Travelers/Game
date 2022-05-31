@@ -94,10 +94,12 @@ func _on_Checkbtn_pressed():
 		else:
 			game_state = "lose"
 			
-			if Global.coins > 0:
+			if Global.coins -1 > 0:
 				Global.coins = Global.coins - 1
-				$AcceptDialog.dialog_text = "Oh no! te has equivocado en"+String(incorrect)+"\nHas perdido un glóbulo rojo\nTe quedan:"+str(Global.coins)+"\nVuelve a intentar!"
+				$AcceptDialog.dialog_text = "Oh no! te has equivocado en "+String(incorrect)+"\nHas perdido un glóbulo rojo\nTe quedan: "+str(Global.coins)+"\nVuelve a intentar!"
 			else:
+				if Global.coins>0: 
+					Global.coins = Global.coins - 1
 				$AcceptDialog.dialog_text = "Oh, no! Te has quedado sin glóbulos rojos, recolecta más para volver a intentar"
 			$AcceptDialog.popup()			
 	else:

@@ -15,6 +15,7 @@
 [ext_resource path="res://assets/ttf/SpaceGrotesk-SemiBold.ttf" type="DynamicFontData" id=13]
 [ext_resource path="res://src/scenes/immune_system/base_game/HealthScore.gd" type="Script" id=14]
 [ext_resource path="res://src/scenes/immune_system/base_game/Virus.tscn" type="PackedScene" id=15]
+[ext_resource path="res://src/prebuilt-classes/mytexturebtn.gd" type="Script" id=16]
 [ext_resource path="res://assets/sounds/background_sounds/immune_system.mp3" type="AudioStream" id=17]
 [ext_resource path="res://font.tres" type="DynamicFont" id=18]
 [ext_resource path="res://src/scenes/immune_system/base_game/dialogs/DialogUI.tscn" type="PackedScene" id=19]
@@ -28,7 +29,6 @@
 [ext_resource path="res://src/scenes/immune_system/base_game/Level-lb.gd" type="Script" id=27]
 [ext_resource path="res://assets/UI/immune_system/lymphocyte/lymphocyte-battle.png" type="Texture" id=28]
 [ext_resource path="res://assets/UI/immune_system/cell/blood-cell.png" type="Texture" id=29]
-[ext_resource path="res://src/scenes/immune_system/base_game/closebtn.gd" type="Script" id=30]
 [ext_resource path="res://src/scenes/immune_system/base_game/Help-panel.gd" type="Script" id=31]
 [ext_resource path="res://assets/UI/buttons/restart.png" type="Texture" id=32]
 
@@ -279,6 +279,7 @@ shape = SubResource( 26 )
 position = Vector2( 149.5, 552.932 )
 scale = Vector2( 0.442693, 0.416349 )
 frames = SubResource( 1 )
+frame = 1
 speed_scale = 1.5
 playing = true
 
@@ -374,6 +375,7 @@ scale = Vector2( 0.395149, 0.388287 )
 [node name="Quit" parent="." instance=ExtResource( 11 )]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 0
 
 [node name="TextureRect2" type="TextureRect" parent="CanvasLayer"]
 margin_top = 12.0
@@ -418,6 +420,7 @@ margin_right = 149.0
 margin_bottom = 661.0
 rect_scale = Vector2( 0.580859, 0.595155 )
 texture_normal = ExtResource( 22 )
+script = ExtResource( 16 )
 
 [node name="Start" type="Area2D" parent="CanvasLayer"]
 script = ExtResource( 25 )
@@ -563,7 +566,7 @@ margin_right = 960.0
 margin_bottom = 223.0
 rect_scale = Vector2( 0.288225, 0.288225 )
 texture_normal = ExtResource( 21 )
-script = ExtResource( 30 )
+script = ExtResource( 16 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2( 4.5, 330.5 )

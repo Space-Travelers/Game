@@ -23,6 +23,7 @@ func _on_request_completed(result, response_code, headers, body):
 	for _button in $question_holder2.get_children():
 		buttons.append(_button)
 	data = json.result
+	data = randomize_array(data)
 	load_quiz()		
 	
 func _ready() -> void:
@@ -31,7 +32,6 @@ func _ready() -> void:
 	
 	
 func load_quiz() -> void:
-	data = randomize_array(data)
 	if index >= data.size():
 		game_over()
 		return

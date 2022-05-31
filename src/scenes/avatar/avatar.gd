@@ -78,7 +78,10 @@ func _change_stats(data):
 
 func _on_exit_pressed():
 	PlayerInfo.logged = false
+	PlayerInfo.logout = true
 	PlayerInfo.user_name=""
 	PlayerInfo.email = ""
-	get_tree().change_scene("res://src/scenes/login/login.tscn")
+	var scene_quit =load("res://src/scenes/quit_message.tscn")
+	var scene=scene_quit.instance()
+	call_deferred("add_child", scene)
 	
