@@ -1,5 +1,6 @@
 [gd_scene load_steps=47 format=2]
 
+
 [ext_resource path="res://assets/UI/immune_system/room/level-cont.png" type="Texture" id=1]
 [ext_resource path="res://assets/UI/immune_system/room/tall-blue.png" type="Texture" id=2]
 [ext_resource path="res://src/scenes/immune_system/base_game/Level-lb.gd" type="Script" id=3]
@@ -26,6 +27,7 @@
 [ext_resource path="res://src/scenes/immune_system/base_game/Help-panel.gd" type="Script" id=24]
 [ext_resource path="res://assets/UI/immune_system/cell/blood-cell.png" type="Texture" id=25]
 [ext_resource path="res://assets/UI/buttons/restart.png" type="Texture" id=26]
+
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 315.222, 103.808 )
@@ -449,7 +451,11 @@ rect_scale = Vector2( 0.288225, 0.288225 )
 texture_normal = ExtResource( 21 )
 script = ExtResource( 19 )
 
+
 [node name="Panel" type="NinePatchRect" parent="."]
+
+[node name="Panel2" type="NinePatchRect" parent="."]
+
 visible = false
 margin_left = 2065.0
 margin_top = 31.0
@@ -458,12 +464,18 @@ margin_bottom = 49.0
 rect_scale = Vector2( 12.5832, 7.00485 )
 
 [node name="TextureRect" type="TextureRect" parent="Panel"]
+
+[node name="TextureRect" type="TextureRect" parent="Panel2"]
+
 margin_right = 740.0
 margin_bottom = 283.0
 rect_scale = Vector2( 0.0319752, 0.0560977 )
 texture = ExtResource( 20 )
 
 [node name="Label" type="Label" parent="Panel"]
+
+[node name="Label" type="Label" parent="Panel2"]
+
 margin_left = 1.27148
 margin_top = 4.28275
 margin_right = 54.2715
@@ -473,7 +485,11 @@ custom_colors/font_color = Color( 0.905882, 0.905882, 0.905882, 1 )
 custom_fonts/font = ExtResource( 18 )
 text = "hola"
 
+
 [node name="TextureButton" type="TextureButton" parent="Panel"]
+
+[node name="TextureButton" type="TextureButton" parent="Panel2"]
+
 margin_left = 21.0
 margin_top = 1.0
 margin_right = 161.0
@@ -493,6 +509,7 @@ margin_right = 36430.6
 margin_bottom = 6461.83
 rect_scale = Vector2( 0.413932, 0.413932 )
 texture_normal = ExtResource( 26 )
+
 
 [node name="fallen_zone" type="Area2D" parent="."]
 

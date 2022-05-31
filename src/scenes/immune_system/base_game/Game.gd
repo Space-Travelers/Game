@@ -45,11 +45,9 @@ func _on_Virus_area_entered(area):
 
 func _on_fallen_zone_area_entered(area):
 	$game_items/Lymphocyte.reset_lymp()
-	pass # Replace with function body.
 
 
 func _on_Virus_area_exited(area):
 	$Panel.hide()
 	$restart.hide()
-	
 	pass # Replace with function body.

@@ -35,3 +35,4 @@ func _notification(exit):
 func set_visible(is_visible):
 	for node in get_children():
 		node.visible = is_visible
+

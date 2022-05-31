@@ -18,6 +18,7 @@ func _ready():
 
 func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 	if result == HTTPRequest.RESULT_SUCCESS:
+	#lol this has something to do with the backend, it needs fix on this weird behavior
 		if(response_code==500):
 			get_tree().change_scene("res://src/scenes/room/room.tscn")	
 		else:
